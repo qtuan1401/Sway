@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      HomePage
+      Welcome to Sway
     </div>
   );
 }
