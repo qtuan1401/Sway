@@ -1,20 +1,8 @@
-# %%
 import pandas as pd
+import csv
 import requests
 from bs4 import BeautifulSoup
-import csv
 
-# %%
-path = "data/newsArticlesWithLabels.tsv"
-df = pd.read_csv(path, delimiter='\t')
-
-# %%
-df.head()
-
-# %%
-df.columns
-
-# %%
 def getNumVal(val):
     match val:
         case 'Negative':
@@ -38,37 +26,133 @@ def Crunch(L, R):
         swing = d
     return swing
 
-# %%
-with open ('data/content.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['url', 'swing', 'headline', 'content']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+def NYTimes(soup):
+    ret = []
+    headline = BeautifulSoup(str(soup.find_all('h1')), 'html.parser').text 
+    headline.replace('[', '').replace(']', '')
+    ret.append(headline)
 
-    writer.writeheader()
-    for i in range (201):
-        try:
-            swing = Crunch(getNumVal(df.iloc[i].democrat_vote), getNumVal(df.iloc[i].republican_vote))
-            headers = {'User-Agent': 'Mozilla/5.0'}
+    body = BeautifulSoup(str(soup.find_all('p', {'class': "css-at9mc1 evys1bk0"})), 'html.parser').text
+    body = body.replace(',', '').replace(']','').replace('[', '').strip()
+    ret.append(body)
+
+    if (body != '[]' and headline != '[]' and body != '' and headline != ''):
+        return ret
+    else:
+        return False
+
+def HuffPost(soup):
+    ret = []
+    headline = BeautifulSoup(str(soup.find_all('h1')), 'html.parser').text 
+    headline.replace('[', '').replace(']', '')
+    ret.append(headline)
+
+    body = BeautifulSoup(str(soup.find_all('p', {'class': ""})), 'html.parser').text
+    body = body.replace(',', '').replace(']','').replace('[', '').strip()
+    ret.append(body)
+
+    if (body != '[]' and headline != '[]' and body != '' and headline != ''):
+        return ret
+    else:
+        return False
+
+def WashPost(soup):
+    ret = []
+    headline = BeautifulSoup(str(soup.find_all('h1')), 'html.parser').text 
+    headline.replace('[', '').replace(']', '')
+    ret.append(headline)
+
+    body = BeautifulSoup(str(soup.find_all('p', {'class': ""})), 'html.parser').text
+    body = body.replace(',', '').replace(']','').replace('[', '').strip()
+    ret.append(body)
+
+    if (body != '[]' and headline != '[]' and body != '' and headline != '' and body != 'This article was published more than 9 years ago'):
+        return ret
+    else:
+        return False
+
+def FoxNews(soup):
+    ret = []
+    headline = BeautifulSoup(str(soup.find_all('h1')), 'html.parser').text 
+    headline.replace('[', '').replace(']', '')
+    ret.append(headline)
+
+    body = BeautifulSoup(str(soup.find_all('p', {'class': ""})), 'html.parser').text
+    body = body.replace(',', '').replace(']','').replace('[', '').strip()
+    ret.append(body)
+
+    if (body != '[]' and headline != '[]' and body != '' and headline != ''):
+        return ret
+    else:
+        return False
+
+def NBC(soup):
+    ret = []
+    headline = BeautifulSoup(str(soup.find_all('h1')), 'html.parser').text 
+    headline.replace('[', '').replace(']', '')
+    ret.append(headline)
+
+    body = BeautifulSoup(str(soup.find_all('p', {'class': ""})), 'html.parser').text
+    body = body.replace(',', '').replace(']','').replace('[', '').strip()
+    ret.append(body)
+
+    if (body != '[]' and headline != [] and body != '' and headline != ''):
+        return ret
+    else:
+        return False
+
+def writeCSV(df, loop):
+    nytimes = 'http://www.nytimes.com'
+    huffpost = 'http://www.huffingtonpost.com'
+    washpost = 'http://www.washingtonpost.com'
+    foxnews = 'http://www.foxnews.com'
+    nbc = 'http://www.nbc.com'
+    count = 0
+    with open ('data/out.csv', 'w', newline='', encoding='UTF-8') as csvfile:
+        fieldnames = ['url', 'swing', 'headline', 'content']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for i in range (loop):
             url = df.iloc[i].url
-            page = requests.get(url, headers=headers)
-            soup = BeautifulSoup(page.text, 'html.parser')
+            swing = Crunch(getNumVal(df.iloc[i].democrat_vote), getNumVal(df.iloc[i].republican_vote))
+            headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9'}
+            if nytimes in url:
+                page = requests.get(url, headers=headers)
+                soup = BeautifulSoup(page.text, 'html.parser')
+                out = NYTimes(soup)
+            elif huffpost in url:
+                page = requests.get(url, headers=headers)
+                soup = BeautifulSoup(page.text, 'html.parser')
+                out = HuffPost(soup)
+            elif washpost in url:
+                page = requests.get(url, headers=headers)
+                soup = BeautifulSoup(page.text, 'html.parser')
+                out = WashPost(soup)
+            elif foxnews in url:
+                page = requests.get(url, headers=headers)
+                soup = BeautifulSoup(page.text, 'html.parser')
+                out = FoxNews(soup)
+            elif nbc in url:
+                page = requests.get(url, headers=headers)
+                soup = BeautifulSoup(page.text, 'html.parser')
+                out = NBC(soup)
+            else:
+                out = False
+                pass
+                
+            if out != False:
+                writer.writerow({'url': url, 'swing': swing, 'headline': out[0], 'content': out[1]})
+                print('Written Row:' + str(count) + ' on Table row: ' + str(i))
+                count += 1
 
-            p = soup.find_all('p')
-            p_cleantext = BeautifulSoup(str(p), 'html.parser').text
+def main():
+    path = "data/newsArticlesWithLabels.tsv"
+    df = pd.read_csv(path, delimiter='\t')
+    print(df.columns)
+    #loop = len(df.index)
+    loop = 100
+    writeCSV(df, loop)
 
-            h1 = soup.find_all('h1')
-            h1_cleantext = BeautifulSoup(str(h1), 'html.parser').text
-
-            writer.writerow({'url': url, 'swing': swing, 'content': p_cleantext, 'headline': h1_cleantext})
-            print('Written Row:' + str(i))
-        except:
-            pass
-
-
-# %%
-newdf = pd.read_csv("content.csv")
-
-# %%
-newdf.columns
-
-# %%
-newdf.head()
+if __name__ == main():
+    main()
+    
