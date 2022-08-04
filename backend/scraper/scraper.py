@@ -95,13 +95,13 @@ def writeCSV(df, loop):
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = BBC(soup)
             else:
-                print(f"No value for {url[:30]}")
+                print(f"No value for {url[:30]} on Table row: " + str(i))
                 out = False
                 pass
                 
             if out != False:
                 writer.writerow({'source': sourcename, 'swing': swing, 'headline': out[0], 'content': out[1]})
-                print('Written Row:' + str(count) + ' on Table row: ' + str(i) + ' for ' + sourcename)
+                print('Written Row: ' + str(count) + ' on Table row: ' + str(i) + ' for ' + sourcename)
                 count += 1
 
 def main():
@@ -109,7 +109,6 @@ def main():
     df = pd.read_csv(path, delimiter='\t')
     print(df.columns)
     loop = len(df.index)
-    #loop = 50
     writeCSV(df, loop)
 
 # ---- Scrapers ----
