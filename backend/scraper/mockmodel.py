@@ -1,102 +1,67 @@
 import os
 os.add_dll_directory("C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.2/bin")
 
-import requests
-from bs4 import BeautifulSoup
 import numpy as np
 import tensorflow as tf
+from matplotlib import pyplot as plt
 import pandas as pd
 from tensorflow import keras
 from keras.metrics import categorical_crossentropy
 from sklearn.metrics import confusion_matrix
-
-from keras.preprocessing.text import Tokenizer
+from keras.models import Sequential
+from keras.layers import Activation, Dense, Dropout
+import tensorflow_hub as hub
 
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
 print("Num GPUs Available: ", len(physical_devices))
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-def WashPost(soup):
-    ret = []
-    headline = BeautifulSoup(str(soup.find_all('h1')), 'html.parser').text 
-    headline.replace('[', '').replace(']', '')
-    ret.append(headline)
+def df_to_dataset(dataframe, shuffle=True, batch_size=1024):
+  df = dataframe.copy()
+  labels = df.pop('swing')
+  df = df["content"]
+  ds = tf.data.Dataset.from_tensor_slices((df, labels))
+  if shuffle:
+    ds = ds.shuffle(buffer_size=len(dataframe))
+  ds = ds.batch(batch_size)
+  ds = ds.prefetch(tf.data.AUTOTUNE)
+  return ds
 
-    body = BeautifulSoup(str(soup.find_all('p', {'class': ""})), 'html.parser').text
-    body = body.replace(',', '').replace(']','').replace('[', '').strip()
-    ret.append(body)
+path = "data/out.csv"
+df = pd.read_csv(path, usecols=["content", "swing"])
+train, val, test = np.split(df.sample(frac=1), [int(0.8*len(df)), int(0.9*len(df))])
 
-    if (body != '[]' and headline != '[]' and body != '' and headline != '' and body != 'This article was published more than 9 years ago'):
-        return ret
-    else:
-        return False
+df.info()
 
-path = "data/FULLTESTOUT.csv"
-newdf = pd.read_csv(path)
+train_data = df_to_dataset(train)
+valid_data = df_to_dataset(val)
+test_data = df_to_dataset(test)
 
-vocab_size = 10000
-embedding_dim = 16
-max_length = 100
-trunc_type='post'
-padding_type='post'
-oov_tok = "<OOV>"
-training_size = 2000
+embedding = "https://tfhub.dev/google/nnlm-en-dim50/2"
+hub_layer = hub.KerasLayer(embedding, dtype=tf.string, trainable=True)
 
-sentences = []
-labels = []
+model = tf.keras.Sequential()
+model.add(hub_layer)
+model.add(tf.keras.layers.Dense(16, activation='relu'))
+model.add(tf.keras.layers.Dropout(0.4))
+model.add(tf.keras.layers.Dense(16, activation='relu'))
+model.add(tf.keras.layers.Dropout(0.4))
+model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
-for i in range(len(newdf.index)):
-    sentences.append(newdf['content'].iloc[i])
-    labels.append(newdf['swing'].iloc[i])
+#model.summary()
 
-training_sentences = sentences[0:training_size]
-testing_sentences = sentences[training_size:]
-training_labels = labels[0:training_size]
-testing_labels = labels[training_size:]
+model.compile(optimizer=keras.optimizers.Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False),
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy'])
 
-tokenizer = Tokenizer(num_words=vocab_size, oov_token=oov_tok)
-tokenizer.fit_on_texts(training_sentences)
+model.evaluate(train_data)
+model.evaluate(valid_data)
 
-word_index = tokenizer.word_index
+history = model.fit(train_data, epochs=30, validation_data=valid_data)
+model.evaluate(test_data)
 
-training_sequences = tokenizer.texts_to_sequences(training_sentences)
-training_padded = tf.keras.utils.pad_sequences(training_sequences, maxlen=max_length, padding=padding_type, truncating=trunc_type)
+predictions = model.predict(test_data, batch_size=10, verbose=0)  
 
-testing_sequences = tokenizer.texts_to_sequences(testing_sentences)
-testing_padded = tf.keras.utils.pad_sequences(testing_sequences, maxlen=max_length, padding=padding_type, truncating=trunc_type)
-
-training_padded = np.array(training_padded)
-training_labels = np.array(training_labels)
-testing_padded = np.array(testing_padded)
-testing_labels = np.array(testing_labels)
-
-model = tf.keras.Sequential([
-    tf.keras.layers.Embedding(vocab_size, embedding_dim, input_length=max_length),
-    tf.keras.layers.GlobalAveragePooling1D(),
-    tf.keras.layers.Dense(24, activation='relu'),
-    tf.keras.layers.Dense(1, activation='sigmoid')
-])
-model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
-
-model.summary()
-
-num_epochs = 30
-history = model.fit(training_padded, training_labels, epochs=num_epochs, validation_data=(testing_padded, testing_labels), verbose=2)
-
-e = model.layers[0]
-weights = e.get_weights()[0]
-print(weights.shape) # shape: (vocab_size, embedding_dim)
-
-url = 'https://www.washingtonpost.com/politics/house-conservatives-face-up-to-their-defeat/2013/10/16/00c745b8-3697-11e3-80c6-7e6dd8d22d8f_story.html'
-headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9'}
-
-page = requests.get(url, headers=headers)
-soup = BeautifulSoup(page.text, 'html.parser')
-out = WashPost(soup)
-sentence = out[1]
-
-sequences = tokenizer.texts_to_sequences(sentence)
-padded = tf.keras.utils.pad_sequences(sequences, maxlen=max_length, padding=padding_type, truncating=trunc_type)
-prediction = model.predict(padded)
-#print('prediction shape:', prediction.shape)
-print(prediction)
+rounded_predictions = np.argmax(predictions, axis=-1)
+for i in rounded_predictions:
+    print(i)
