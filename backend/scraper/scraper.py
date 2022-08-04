@@ -2,6 +2,8 @@ import pandas as pd
 import csv
 import requests
 from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 def getNumVal(val):
     match val:
@@ -51,47 +53,102 @@ def writeCSV(df, loop):
             headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9'}
             if nytimes in url:
                 sourcename = "New York Times"
-                page = requests.get(url, headers=headers)
+                #page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = NYTimes(soup)
             elif huffpost in url:
                 sourcename = "Huffington Post"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = HuffPost(soup)
             elif latimes in url:
                 sourcename = "LA Times"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = LATimes(soup)
             elif washpost in url:
                 sourcename = "Washington Post"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = WashPost(soup)
             elif foxnews in url:
                 sourcename = "Fox News"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = FoxNews(soup)
             elif nbc in url:
                 sourcename = "NBC"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = NBC(soup)
             elif usatoday in url:
                 sourcename = "USA Today"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = USAToday(soup)
             elif breitbart in url:
                 sourcename = "Breitbart"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = Breitbart(soup)
             elif bbc in url:
                 sourcename = "BBC"
-                page = requests.get(url, headers=headers)
+                session = requests.Session()
+                session.headers = headers
+                retry = Retry(connect=3, backoff_factor=0.5)
+                adapter = HTTPAdapter(max_retries=retry)
+                session.mount('http://', adapter)
+                session.mount('https://', adapter)
+                page = session.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
                 out = BBC(soup)
             else:
@@ -185,7 +242,7 @@ def NBC(soup):
     body = body.replace(',', '').replace(']','').replace('[', '').strip()
     ret.append(body)
 
-    if (body != '[]' and headline != [] and body != '' and headline != ''):
+    if (body != '[]' and headline != '[]' and body != '' and headline != ''):
         return ret
     else:
         return False
@@ -200,12 +257,13 @@ def USAToday(soup):
     body = body.replace(',', '').replace(']','').replace('[', '').strip()
     ret.append(body)
 
-    if (body != '[]' and headline != [] and body != '' and headline != ''):
+    if (body != '[]' and headline != '[]' and body != '' and headline != ''):
         return ret
     else:
         return False
 
 # THIS SCRAPER NEEDS TO BE IMPROVED - Short trailing message at the end of every body text
+
 def Breitbart(soup): 
     ret = []
     headline = BeautifulSoup(str(soup.find_all('h1')), 'html.parser').text 
@@ -216,7 +274,7 @@ def Breitbart(soup):
     body = body.replace(',', '').replace(']','').replace('[', '').strip()
     ret.append(body)
 
-    if (body != '[]' and headline != [] and body != '' and headline != ''):
+    if (body != '[]' and headline != '[]' and body != '' and headline != ''):
         return ret
     else:
         return False
