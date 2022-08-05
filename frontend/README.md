@@ -1,3 +1,9 @@
+## Setting up
+
+1) Ensure nodejs and node package manager(npm) are installed.
+2) Navigate to the frontend project folder in your terminal
+3) Run the "npm install" command
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
