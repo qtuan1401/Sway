@@ -1,6 +1,6 @@
 # Sway Bias Detection
 
-This is the public repository of the Sway Bias Tectection Project undertaken at the University of Wollongong
+This is the public repository of the Sway Bias Dectection Project undertaken at the University of Wollongong
 
 ## Front-End
 
