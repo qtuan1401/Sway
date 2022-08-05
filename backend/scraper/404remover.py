@@ -4,7 +4,7 @@ import csv
 import requests
 from bs4 import BeautifulSoup
 
-path = "data/newsArticlesWithLabels.tsv"
+path = r"backend/data/newsArticlesWithLabels.tsv"
 df = pd.read_csv(path, delimiter='\t')
 
 for i in range(0, 100):

@@ -42,7 +42,7 @@ def writeCSV(df, loop):
     latimes = "http://www.latimes.com"
 
     count = 0
-    with open ('data/out.csv', 'w', newline='', encoding='UTF-8') as csvfile:
+    with open (r'backend/data/out.csv', 'w', newline='', encoding='UTF-8') as csvfile:
         fieldnames = ['source', 'swing', 'headline', 'content']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -162,7 +162,7 @@ def writeCSV(df, loop):
                 count += 1
 
 def main():
-    path = "data/newsArticlesWithLabels.tsv"
+    path = r"backend/data/newsArticlesWithLabels.tsv"
     df = pd.read_csv(path, delimiter='\t')
     print(df.columns)
     loop = len(df.index)
@@ -313,7 +313,7 @@ def scrapeDebug(body, headline): # Just to save time, delete later
     print("\n" + body)
     print("\n\n" + headline)
 
-if __name__ == main():
+if __name__ == '__main__':
     main()
 
 # ---- SKIPPED SCRAPERS ----

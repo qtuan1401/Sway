@@ -14,7 +14,7 @@ physical_devices = tf.config.experimental.list_physical_devices('GPU')
 print("Num GPUs Available: ", len(physical_devices))
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-path = "data/out.csv"
+path = r"backend/data/out.csv"
 df = pd.read_csv(path, usecols=["content", "swing"])
 pd.set_option('display.max_colwidth', -1)
 x_train, x_test = train_test_split(df, test_size=0.2, random_state=111)
@@ -88,7 +88,8 @@ history = model.fit(
 
 #plt.show()
 
-test_data = pd.read_csv('data/test_data.csv', usecols=["content"])
+path = r'backend/data/test_data.csv'
+test_data = pd.read_csv('', usecols=["content"])
 predictions = model.predict(test_data, steps=len(test_data), verbose=0)
 print(np.round(predictions))
 

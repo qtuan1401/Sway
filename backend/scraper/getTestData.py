@@ -35,7 +35,7 @@ def getHuffUSNews():
 def writeCSV(links):
     count = 0
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'}
-    with open ('data/test_data.csv', 'w', newline='', encoding='UTF-8') as csvfile:
+    with open (r'backend/data/test_data.csv', 'w', newline='', encoding='UTF-8') as csvfile:
         fieldnames = ['headline', 'content']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
