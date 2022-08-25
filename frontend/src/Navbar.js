@@ -6,10 +6,13 @@ import ShareIcon from "./common-ui/ShareIcon";
 
 import "./Navbar.css";
 
+
+
+
 export default function Navbar() {
   return (
     <div className="nav-container">
-      <RoundButton>
+      <RoundButton >
         <HomeIcon />
       </RoundButton>
       

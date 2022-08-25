@@ -2,6 +2,10 @@ import "./Filter.css"
 import TextField from '@mui/material/TextField';
 import Button from "../common-ui/Button";
 
+function notify(){
+	alert('You pressed the submit button');
+}
+
 export default function Filter() {
 	return (
 		<div className="filter-container">
@@ -30,7 +34,10 @@ export default function Filter() {
 				/>
 			</div>
 			
-			<Button>Submit</Button>
+			
+			<Button onClick={notify}>Submit</Button>
+
+
 		</div>
 	);
 }
