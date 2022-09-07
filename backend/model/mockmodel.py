@@ -19,7 +19,7 @@ df = pd.read_csv(path, usecols=["content", "swing"])
 pd.set_option('display.max_colwidth', -1)
 x_train, x_test = train_test_split(df, test_size=0.2, random_state=111)
 
-x_train, x_test = train_test_split(df, test_size=0.2, random_state=111)
+#x_train, x_test = train_test_split(df, test_size=0.2, random_state=111)
 
 df['swing'].value_counts()
 
@@ -54,11 +54,21 @@ hub_layer = hub.KerasLayer(embedding, output_shape=[128], input_shape=[], dtype=
 hub_layer(train_data[:1])
 
 model = tf.keras.Sequential()
+#model.add(hub_layer)
+#for units in [128, 128, 64, 32]:
+#    model.add(tf.keras.layers.Dense(units, activation='relu'))
+#    model.add(tf.keras.layers.Dropout(0.4))
+#model.add(tf.keras.layers.Dense(9, activation="softmax"))
+model = tf.keras.Sequential()
 model.add(hub_layer)
-for units in [128, 128, 64, 32]:
-    model.add(tf.keras.layers.Dense(units, activation='relu'))
-    model.add(tf.keras.layers.Dropout(0.4))
-model.add(tf.keras.layers.Dense(9, activation="softmax"))
+model.add(tf.keras.layers.Dense(1000,activation=tf.nn.sigmoid))
+model.add(tf.keras.layers.Dropout(0.5, noise_shape=None, seed=None))
+model.add(tf.keras.layers.Dense(500,activation=tf.nn.sigmoid))
+model.add(tf.keras.layers.Dropout(0.5, noise_shape=None, seed=None))
+model.add(tf.keras.layers.Dense(120,activation=tf.nn.sigmoid))
+model.add(tf.keras.layers.Dropout(0.5, noise_shape=None, seed=None))
+model.add(tf.keras.layers.Dense(9,activation=tf.nn.softmax))
+
 
 model.summary()
 
@@ -89,10 +99,10 @@ history = model.fit(
 #plt.show()
 
 path = r'backend/data/test_data.csv'
-test_data = pd.read_csv('', usecols=["content"])
+test_data = pd.read_csv(path, usecols=["content"])
 predictions = model.predict(test_data, steps=len(test_data), verbose=0)
 print(np.round(predictions))
 
 plt.hist(predictions, bins=50)
-plt.gca().set(title='Frequency Histogram', ylabel='Frequency');
+plt.gca().set(title='Frequency Histogram', ylabel='Frequency')
 plt.show
