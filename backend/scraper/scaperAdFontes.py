@@ -12,11 +12,11 @@ df['Swing'] = None
 for i in range(df.shape[0]):
     if (df.at[i,'Bias']<=-27):
         df.at[i,'Swing'] = '-2'
-    elif (df.at[i,'Bias']>=-26 and df.at[i,'Bias']<=-10):
+    elif (df.at[i,'Bias']>-27 and df.at[i,'Bias']<=-5):
         df.at[i,'Swing'] = '-1'
-    elif (df.at[i,'Bias']>=-9 and df.at[i,'Bias']<=9):
+    elif (df.at[i,'Bias']>-5 and df.at[i,'Bias']<5):
         df.at[i,'Swing'] = '0'
-    elif (df.at[i,'Bias']>=10 and df.at[i,'Bias']<=26):
+    elif (df.at[i,'Bias']>=5 and df.at[i,'Bias']<27):
         df.at[i,'Swing'] = '1'
     elif (df.at[i,'Bias']>=27):
         df.at[i,'Swing'] = '2'
