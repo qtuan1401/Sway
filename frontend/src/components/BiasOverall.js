@@ -1,4 +1,4 @@
-import './BiasOverall.css'
+import './styles/BiasOverall.css'
 import Chart from 'react-apexcharts'
 import RadialBar from './biasOverall-components/radialbar.js'
 

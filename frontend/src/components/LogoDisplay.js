@@ -1,4 +1,4 @@
-import './LogoDisplay.css'
+import './styles/LogoDisplay.css'
 
 // Prop Descriptions:
 // size - Determines the size of logo. Width is auto-generated to preserve aspect ratio.

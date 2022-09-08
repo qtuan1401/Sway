@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import './Navbar.css'
+import './styles/Navbar.css'
 import Button from './navbar-components/Button'
 import logoHome from './navbar-components/button-icons/home.png'
 import logoMoreInfo from './navbar-components/button-icons/moreinfo.png'

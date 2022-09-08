@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import PresenceBar from './biasDisplay-components/presenceBar.js'
-import './BiasDisplay.css'
+import './styles/BiasDisplay.css'
 
 // Bias Display Component to be used on the result display page
 
@@ -9,7 +9,7 @@ import './BiasDisplay.css'
 // desc - Description underneath heading on each display tile
 // leftLabel - The label that will be under the left side of the bar
 // rightLabel - The label that will be under the right side of the bar
-// barPercent - The bar percent prop will be passed through this component to the progressBar component to determine the state of the bar.
+// barPercent - The bar percent prop will be passed through this component to the progressBar component to determine the state of the bar. It's value must be given in the "x%" format with quotation marks.
 
 
 const BiasDisplay = ({headerText, desc, leftLabel, rightLabel, barPercent}) => {
