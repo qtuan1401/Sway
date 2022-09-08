@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import PresenceBar from './biasDisplay-components/presenceBar.js'
-import './BiasDisplays.css'
+import './BiasDisplay.css'
 
 // Bias Display Component to be used on the result display page
 
