@@ -21,7 +21,7 @@ x_train, x_test = train_test_split(df, test_size=0.2, random_state=111)
 
 #x_train, x_test = train_test_split(df, test_size=0.2, random_state=111)
 
-df['swing'].value_counts()
+print(df['swing'].value_counts())
 
 swingdata = df['swing']
 
@@ -101,8 +101,11 @@ history = model.fit(
 path = r'backend/data/test_data.csv'
 test_data = pd.read_csv(path, usecols=["content"])
 predictions = model.predict(test_data, steps=len(test_data), verbose=0)
+#print(predictions)
 print(np.round(predictions))
 
-plt.hist(predictions, bins=50)
-plt.gca().set(title='Frequency Histogram', ylabel='Frequency')
-plt.show
+print(np.sum(np.round(predictions), axis=0))
+
+
+##Figure out what 1-hot labels are actually encoded to
+##FIgure out best way to display data (purely for testing)
