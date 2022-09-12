@@ -26,10 +26,13 @@ df.drop(df.columns[[2, 3]], axis=1, inplace=True)
 print(df.columns)
 print(df.head)
 
+headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9'}
 for i in range(df.shape[0]):
     print(i)
     try:
-        result=requests.get(str(df.iloc[i]['Url']))
+        session = requests.Session()
+        session.headers = headers
+        result=session.get(str(df.iloc[i]['Url']))
     except Exception:
         print(str(i)+" - error")
         continue
