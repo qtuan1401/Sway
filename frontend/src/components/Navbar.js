@@ -8,7 +8,7 @@ import logoOurModel from './navbar-components/button-icons/ourmodel.png'
 import logoShare from './navbar-components/button-icons/share.png'
 
 const Navbar = () => {
-    const [B1active, setB1Active] = useState(false);
+    const [B1active, setB1Active] = useState(true);
     const [B2active, setB2Active] = useState(false);
     const [B3active, setB3Active] = useState(false);
     const [B4active, setB4Active] = useState(false);

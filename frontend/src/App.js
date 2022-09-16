@@ -11,7 +11,8 @@ import UserInputField from './components/UserInputField'
 function App() {
 	return (
 		<>
-		
+			<UserInputField title='Test' rows={10} width={2000} />
+			<Navbar default='home'/>
 		</>
 	);
 }
