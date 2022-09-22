@@ -1,0 +1,6 @@
+
+backend/data/models/finetuned_BERT_epoch_1.model
+backend/data/models/finetuned_BERT_epoch_2.model
+backend/data/models/finetuned_BERT_epoch_3.model
+backend/data/models/finetuned_BERT_epoch_4.model
+backend/data/models/finetuned_BERT_epoch_5.model

@@ -62,5 +62,5 @@ def Punctuation(string):
 
 df['Text'] = df['Text'].apply(lambda x:Punctuation(str(x)))
 
-path = r'backend/data/data_out.csv'
+path = r'backend/data/articles2.csv'
 df.to_csv(path)
