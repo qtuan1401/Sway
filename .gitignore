@@ -5,3 +5,4 @@ backend/data/models/finetuned_BERT_epoch_3.model
 backend/data/models/finetuned_BERT_epoch_4.model
 backend/data/models/finetuned_BERT_epoch_5.model
 backend/data/genderTest.csv
+backend/data/dataout.csv
