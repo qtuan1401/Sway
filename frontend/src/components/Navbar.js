@@ -31,9 +31,6 @@ const Navbar = () => {
         setB2Active(false);
         setB3Active(false);
         setB4Active(false);
-        // It doesn't make sense to do this. The results page shouldn't be
-        // accessible by clicking the home button. I have just left it like this
-        // for testing purposes.
         if(activePage == 0) {
             setActivePage(1);
         } else {

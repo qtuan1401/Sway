@@ -2,17 +2,22 @@ import './styles/BiasOverall.css'
 import Chart from 'react-apexcharts'
 import RadialBar from './biasOverall-components/radialbar.js'
 
-const BiasOverall = ({header, desc}) => {
+// Prop Descriptions:
+// header - Heading at the top tile
+// description - Description underneath heading on tile
+// percent - The label and percentage of the radial bar
+
+const BiasOverall = ({header, description, percent}) => {
     return (
         <div className="BiasOverallContainer">
             <div className="overallBoxHeader">
                 {header}
             </div>
             <div className="overallDescriptionBox">
-                {desc}
+                {description}
             </div>
             <div className="radialbar">   
-                <RadialBar/>
+                <RadialBar percent={percent}/>
             </div>
         </div>
     )

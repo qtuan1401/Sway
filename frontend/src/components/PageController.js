@@ -6,16 +6,47 @@ import OurModelPage from './pages/OurModelPage'
 import AboutUsPage from './pages/AboutUsPage'
 
 const PageController = ({activePage}) => {
+    const handleSubmitButtonClickEvent = () => {
+        // Code to handle submit button click
+    }
+
     if(activePage == 0) {
         return(
             <div className="homePageContainer">
-                <HomePage/>
+                <HomePage submitHandler={handleSubmitButtonClickEvent}/>
             </div>
-        )
+        )    
     } else if(activePage == 1) {
         return(
             <div className="resultsPageContainer">
-                <ResultsPage/>
+                <ResultsPage 
+                    one={{
+                        header: "One", 
+                        description: "Sample Description", 
+                        leftLabel: "Left", 
+                        rightLabel: "Right", 
+                        barPercent: "30%"
+                    }} 
+                    two={{
+                        header: "Two", 
+                        description: "Sample Description", 
+                        leftLabel: "Left", 
+                        rightLabel: "Right", 
+                        barPercent: "50%"
+                    }} 
+                    three={{
+                        header: "Three", 
+                        description: "Sample Description", 
+                        leftLabel: "Left", 
+                        rightLabel: "Right", 
+                        barPercent: "90%"
+                    }}
+                    overall={{
+                        header: "Overall",
+                        description: "Sample Description",
+                        percent: 48
+                    }}
+                />
             </div>
         )
     } else if(activePage == 2) {

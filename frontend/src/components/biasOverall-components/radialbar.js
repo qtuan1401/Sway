@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 // Only the series prop should be changed.
 // Font will need to be changed to comfortaa at some point for consistency
 
-const RadialBar = ({type, series, width, height, options}) => {
+const RadialBar = ({percent}) => {
     const [barState, setBarState] = useState({
         options: {
             chart: {
@@ -19,7 +19,7 @@ const RadialBar = ({type, series, width, height, options}) => {
                 radialBar: {
                     hollow: {
                         margin: 15,
-                        size: "55%"
+                        size: "52%"
                     },
                     track: {
                         background: ["#D3E8FF"],
@@ -38,8 +38,8 @@ const RadialBar = ({type, series, width, height, options}) => {
                 }
             },
         },
-        series: [67],
-      })
+        series: [percent],
+    })
 
     return(
         <div className='chart'>
