@@ -22,7 +22,7 @@ const AboutUsPage = () => {
 
             <br/>
 
-            <h2>Our Target Audience</h2>
+            <h2>Our Target Audience </h2>
 
             <p>Our target audience for the Sway app is anyone receiving news
                  about the current war or politics from public outlets and want to ensure the
