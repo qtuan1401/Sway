@@ -1,6 +1,6 @@
 import './styles/AboutUs.css'
 import Blank from './headshots/blank-profile-picture-973460_1280.webp'
-
+import Sam from './headshots/sam_headshot.png'
 const AboutUsPage = () => {
     return (
 
@@ -54,13 +54,13 @@ const AboutUsPage = () => {
 
         <div class="column">
             <div class="card">
-                <img src={Blank} alt="Dev" width="100%"/>
+                <img src={Sam} alt="Dev" width="100%"/>
                 <div class="container">
                 <h2>Sam Hobson</h2>
                 <p class="title">Backend Designer</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>example@example.com</p>
-                <p><button class="button" onClick={() => {navigator.clipboard.writeText("example@example.com")}}>Copy Email</button></p>
+                <p>Hi! My name is Sam and I am about to complete a Bachelor of Computer Science, majoring in Cyber Security. I love playing games, skiing, astronomy and F1 racing. I plan on using my passion for Cyber Security to help protect computer systems in the future!</p>
+                <p>sam.hobson2535@gmail.com</p>
+                <p><button class="button" onClick={() => {navigator.clipboard.writeText("sam.hobson2535@gmail.com")}}>Copy Email</button></p>
             </div>
             </div>
         </div>
