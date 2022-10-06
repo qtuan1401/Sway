@@ -5,7 +5,7 @@ const AboutUsPage = () => {
     return (
 
         <div className="tempPlaceholder">
-            <h1>About Us Page</h1>
+            <h1  class="h1">About Us Page</h1>
 
             <br/>
             <h2>Our Story</h2>
@@ -26,7 +26,7 @@ const AboutUsPage = () => {
 
             <h2>Our Target Audience </h2>
 
-            <p>Our target audience for the Sway app is anyone receiving news
+            <p class="rectangle">Our target audience for the Sway app is anyone receiving news
                  about the current war or politics from public outlets and want to ensure the
                  information their receiving isn’t bias in any way.</p>
 
