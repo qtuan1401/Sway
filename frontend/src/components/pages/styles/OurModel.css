@@ -1,5 +1,79 @@
-.tempPlaceholder {
-    padding-left: 200px;
-    padding-top: 200px;
+@font-face {
+    font-family: 'ComfortaaReg';
+    src: url('../../fonts/Comfortaa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #D3E8FF;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6DA3E3;
+    border-radius: 8px;
+}
+
+.ourModelHeader {
     position: absolute;
+    padding-top: 100px;
+    padding-left: 630px;
+    font-size: 17px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
+}
+
+.ourModelPage {
+    padding-left: 300px;
+}
+
+.ourModelTextDisplayContainer {
+    position: absolute;
+    padding-top: 150px;
+}
+
+.ourModelTextDisplay {
+    box-sizing: border-box;
+    position: absolute;
+    width: 1381px;
+    height: 500px;
+    background: #FCFCFC;
+    border: 1px solid #D2D2D2;
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 17px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
+}
+
+.linkDisplayHeader {
+    position: absolute;
+    padding-top: 15px;
+    padding-left: 650px;
+    font-size: 17px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
+}
+
+.ourModelLinkDisplayContainer {
+    position: absolute;
+    padding-top: 670px;
+}
+
+.ourModelLinkDisplay {
+    box-sizing: border-box;
+    
+    position: absolute;
+    width: 1381px;
+    height: 217px;
+
+    background: #FCFCFC;
+    border: 1px solid #D2D2D2;
+    border-radius: 8px;
 }
