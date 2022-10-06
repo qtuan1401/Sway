@@ -1,5 +1,5 @@
 .navbarContainer {
-    position: absolute;
+    position: fixed;
     margin-left: 30px;
     top: 36.1%;
     width: 99px;
