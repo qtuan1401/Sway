@@ -1,7 +1,9 @@
 import './styles/AboutUs.css'
 import Blank from './headshots/blank-profile-picture-973460_1280.webp'
+
 const AboutUsPage = () => {
     return (
+
         <div className="tempPlaceholder">
             <h1>About Us Page</h1>
 
@@ -35,17 +37,17 @@ const AboutUsPage = () => {
 
 
 
-        
+
         <div class="row">
          <div class="column">
             <div class="card">
                 <img src={Blank} alt="Dev" width="100%"/>
                 <div class="container">
                 <h2>Chrisvin Joseph</h2>
-                <p class="title">Project Leader &amp; Frontend Designer</p>
+                <p class="title">Project Leader</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>example@example.com</p>
-                <p><button class="button">Contact</button></p>
+                <p>example1@example.com</p>
+                <p><button class="button" onClick={() => {navigator.clipboard.writeText("example1@example.com")}}>Copy Email</button></p>
             </div>
             </div>
         </div>
@@ -58,7 +60,7 @@ const AboutUsPage = () => {
                 <p class="title">Backend Designer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>example@example.com</p>
-                <p><button class="button">Contact</button></p>
+                <p><button class="button" onClick={() => {navigator.clipboard.writeText("example@example.com")}}>Copy Email</button></p>
             </div>
             </div>
         </div>
@@ -71,7 +73,7 @@ const AboutUsPage = () => {
                 <p class="title">Backend Designer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>example@example.com</p>
-                <p><button class="button">Contact</button></p>
+                <p><button class="button" onClick={() => {navigator.clipboard.writeText("example@example.com")}}>Copy Email</button></p>
             </div>
             </div>
         </div>
@@ -84,7 +86,7 @@ const AboutUsPage = () => {
                 <p class="title">Backend Designer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>example@example.com</p>
-                <p><button class="button">Contact</button></p>
+                <p><button class="button" onClick={() => {navigator.clipboard.writeText("example@example.com")}}>Copy Email</button></p>
             </div>
             </div>
         </div>
@@ -96,8 +98,8 @@ const AboutUsPage = () => {
                 <h2>Aidan Galovic</h2>
                 <p class="title">Frontend Designer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>example@example.com</p>
-                <p><button class="button">Contact</button></p>
+                <p>ajg378@uowmail.edu.au</p>
+                <p><button class="button" onClick={() => {navigator.clipboard.writeText("ajg378@uowmail.edu.au")}}>Copy Email</button></p>
             </div>
             </div>
         </div>
@@ -110,7 +112,7 @@ const AboutUsPage = () => {
                 <p class="title">Backend Designer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>example@example.com</p>
-                <p><button class="button">Contact</button></p>
+                <p><button class="button" onClick={() => {navigator.clipboard.writeText("example@example.com")}}>Copy Email</button></p>
             </div>
             </div>
         </div>
