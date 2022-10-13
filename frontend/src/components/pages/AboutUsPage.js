@@ -1,16 +1,17 @@
 import './styles/AboutUs.css'
 import Blank from './headshots/blank-profile-picture-973460_1280.webp'
 import Sam from './headshots/sam_headshot.png'
+import Aidan from './headshots/aidan.png'
 const AboutUsPage = () => {
     return (
 
         <div className="tempPlaceholder">
-            <h1  class="h1">About Us Page</h1>
+            <p  class="headers">About Us</p>
 
             <br/>
-            <h2>Our Story</h2>
-
-            <p> Sway was founded in 2022 by a group of University students 
+            <p class="headers">Our Story</p>
+            <div class="aboutUsTextDisplayContainer">
+            <p class="aboutUsTextDisplay"> Sway was founded in 2022 by a group of University students 
                 who originally came together with the purpose of creating 
                 an app to complete the requirements for their class. 
                 However, with the current war between Russia and Ukraine 
@@ -21,19 +22,17 @@ const AboutUsPage = () => {
                 and upon doing research into bias filters our team noticed 
                 that there were other filters that were not easily 
                 available to the public like a gender filter.</p>
-
+                
             <br/>
-
-            <h2>Our Target Audience </h2>
-
-            <p class="rectangle">Our target audience for the Sway app is anyone receiving news
+            <p class="headers">Our Target Audience </p>
+            <p class="aboutUsTextDisplay">Our target audience for the Sway app is anyone receiving news
                  about the current war or politics from public outlets and want to ensure the
                  information their receiving isn’t bias in any way.</p>
 
-
+            </div>
             <br/>
 
-            <h2>Our Team</h2>
+            <p class="headers">Our Team</p>
 
 
 
@@ -93,11 +92,11 @@ const AboutUsPage = () => {
 
         <div class="column">
             <div class="card">
-                <img src={Blank} alt="Dev" width="100%"/>
+                <img src={Aidan} alt="Dev" width="100%"/>
                 <div class="container">
                 <h2>Aidan Galovic</h2>
                 <p class="title">Frontend Designer</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>Hi, my name is Aidan and I am currently completing my final year of my Bachelor of Computer Science (Cyber Security) degree. I really enjoying getting outdoors and playing sports, I also love coding little games in my spare time. </p>
                 <p>ajg378@uowmail.edu.au</p>
                 <p><button class="button" onClick={() => {navigator.clipboard.writeText("ajg378@uowmail.edu.au")}}>Copy Email</button></p>
             </div>

@@ -1,6 +1,6 @@
 .tempPlaceholder {
     padding-left: 200px;
-    padding-top: 200px;
+    padding-top: 100px;
     position: absolute;
 }
 
@@ -12,6 +12,9 @@
     margin-bottom: 16px;
     padding: 0 8px;
     height:700px;
+    font-size: 14px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
   }
   
   /* Display the columns below each other instead of side by side on small screens */
@@ -60,14 +63,30 @@
     background-color: #555;
   }
 
-.rectangle {
-  display:inline-block;
-  width:auto;
-  height: auto;
-  padding: 24px;
-  background: #A1C5EF;
+.headers{
+  text-align: center;
+  font-size: 17px;
+  font-family: 'ComfortaaReg';
+  font-style: normal;
+
 }
 
-.h1{
-  text-align: center;
+.aboutUsTextDisplayContainer{
+  padding-bottom: 20px;
+
+}
+
+.aboutUsTextDisplay{
+  box-sizing: border-box;
+  position:relative;
+  width: auto;
+  height: auto;
+  background: #FCFCFC;
+  border: 1px solid #D2D2D2;
+  border-radius: 8px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 17px;
+  font-family: 'ComfortaaReg';
+  font-style: normal;
 }
