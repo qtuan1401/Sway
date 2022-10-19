@@ -5,57 +5,91 @@ import ResultsPage from './pages/ResultsPage'
 import OurModelPage from './pages/OurModelPage'
 import AboutUsPage from './pages/AboutUsPage'
 
-const PageController = ({activePage}) => {
+const PageController = ({activePage, activePageStateHandler}) => {
     const [inputActiveState, setInputActiveState] = useState()
     const [urlBoxText, setUrlBoxText] = useState()
     const [textBoxText, setTextBoxText] = useState()
+    const [politicalData, setPoliticalData] = useState()
+    const [qualityData, setQualityData] = useState()
+    const [genderData, setGenderData] = useState()
+    const [overall, setOverall] = useState(0)
 
     const handleSubmitButtonClickEvent = () => {
-        console.log(inputActiveState) // This is here for testing purposes
-        console.log(urlBoxText) // This is here for testing purposes
-        console.log(textBoxText) // This is here for testing purposes
+        if(inputActiveState == 1) {
+            queryNyckelPolitical(urlBoxText)
+            queryNyckelQuality(urlBoxText)
+            queryNyckelGender(urlBoxText)
+            calculateOverall()
+            activePageStateHandler(1)
+        } else if(inputActiveState == 2) {
+            queryNyckelPolitical(textBoxText)
+            queryNyckelQuality(textBoxText)
+            queryNyckelGender(textBoxText)
+            calculateOverall()
+            activePageStateHandler(1)
+        }
+    }
+
+    const queryNyckelPolitical = (str) => {
+        // Query code here for political bias
+        setPoliticalData(30) // Temporary test code, delete when possible
+    }
+
+    const queryNyckelQuality = (str) => {
+        // Query code here for data quality/reliability
+        setQualityData(50) // Temporary test code, delete when possible
+    }
+
+    const queryNyckelGender = (str) => {
+        // Query code here for gender bias
+        setGenderData(90) // Temporary test code, delete when possible
+    }
+
+    const calculateOverall = () => {
+        // Logic to convert the three items above to an overall score to be placed here
+        setOverall(30) // Temporary test code, delete when possible
     }
 
     if(activePage == 0) {
         return(
             <div className="homePageContainer">
                 <HomePage 
-                    submitHandler={handleSubmitButtonClickEvent} 
-                    inputStateChangeHandler={setInputActiveState} 
+                    submitHandler={handleSubmitButtonClickEvent}
+                    inputStateChangeHandler={setInputActiveState}
                     parentUrlBoxStateSetter={setUrlBoxText}
                     parentTextBoxStateSetter={setTextBoxText}
                 />
             </div>
-        )    
+        )
     } else if(activePage == 1) {
         return(
             <div className="resultsPageContainer">
                 <ResultsPage 
                     one={{
-                        header: "One", 
-                        description: "Sample Description", 
+                        header: "Political Bias", 
+                        description: "The degree to which the text provided seems to be directed towards a specific political ideology. The bar below, respresents which side the data was evaluated by a neural network as being closer towards.", 
                         leftLabel: "Left", 
                         rightLabel: "Right", 
-                        barPercent: "30%"
+                        barPercent: `${politicalData}%`
                     }} 
                     two={{
-                        header: "Two", 
-                        description: "Sample Description", 
-                        leftLabel: "Left", 
-                        rightLabel: "Right", 
-                        barPercent: "50%"
+                        header: "Gender Bias", 
+                        description: "The degree to which the text provided seems to be aimed towards a specific gender. The bar below, represents which gender (if any) we have predicted to be the primary audience of the text. It's position is proportional to the confidence of the neural network in the result.", 
+                        leftLabel: "Male", 
+                        rightLabel: "Female", 
+                        barPercent: `${genderData}%`
                     }} 
                     three={{
-                        header: "Three", 
+                        header: "Data Reliability", 
                         description: "Sample Description", 
                         leftLabel: "Left", 
                         rightLabel: "Right", 
-                        barPercent: "90%"
+                        barPercent: `${qualityData}%`
                     }}
                     overall={{
                         header: "Overall",
                         description: "Sample Description",
-                        percent: 48
+                        percent: overall
                     }}
                 />
             </div>

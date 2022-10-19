@@ -31,11 +31,7 @@ const Navbar = () => {
         setB2Active(false);
         setB3Active(false);
         setB4Active(false);
-        if(activePage == 0) {
-            setActivePage(1);
-        } else {
-            setActivePage(0);
-        }
+        setActivePage(0);
     }
 
     const handleClickB2 = () => {
@@ -79,7 +75,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="pageContainer">
-                <PageController activePage={activePage}/>
+                <PageController activePage={activePage} activePageStateHandler={setActivePage}/>
             </div>
         </>
     )
