@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { TextField } from "@mui/material"
 import { Box } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles';
@@ -31,7 +31,14 @@ const StyledTextField = styled(TextField)({
 	},
 });
 
-const UserInputField = ({title, rows,  width}) => {
+const UserInputField = ({title, rows,  width, evtHandler}) => {
+	const [text, setText] = useState()
+
+	const handleChange = (e) => {
+		setText(e.target.value)
+		evtHandler(e.target.value)
+	}
+
     return (
 		<Box
 			component="form"
@@ -55,6 +62,8 @@ const UserInputField = ({title, rows,  width}) => {
 					fullWidth
 					rows={rows}
 					size='small'
+					onChange={handleChange}
+					value={text}
 				/>
 			</div> 
     	</Box>
@@ -67,7 +76,7 @@ UserInputField.defaultProps = {
 }
 
 UserInputField.propTypes = {
-    title: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
 }
 
 export default UserInputField;

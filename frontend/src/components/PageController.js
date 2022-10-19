@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import HomePage from './pages/HomePage'
 import ResultsPage from './pages/ResultsPage'
@@ -6,14 +6,25 @@ import OurModelPage from './pages/OurModelPage'
 import AboutUsPage from './pages/AboutUsPage'
 
 const PageController = ({activePage}) => {
+    const [inputActiveState, setInputActiveState] = useState()
+    const [urlBoxText, setUrlBoxText] = useState()
+    const [textBoxText, setTextBoxText] = useState()
+
     const handleSubmitButtonClickEvent = () => {
-        // Code to handle submit button click
+        console.log(inputActiveState) // This is here for testing purposes
+        console.log(urlBoxText) // This is here for testing purposes
+        console.log(textBoxText) // This is here for testing purposes
     }
 
     if(activePage == 0) {
         return(
             <div className="homePageContainer">
-                <HomePage submitHandler={handleSubmitButtonClickEvent}/>
+                <HomePage 
+                    submitHandler={handleSubmitButtonClickEvent} 
+                    inputStateChangeHandler={setInputActiveState} 
+                    parentUrlBoxStateSetter={setUrlBoxText}
+                    parentTextBoxStateSetter={setTextBoxText}
+                />
             </div>
         )    
     } else if(activePage == 1) {
