@@ -13,7 +13,7 @@ import './styles/BiasDisplay.css'
 // barPercent - The bar percent prop will be passed through this component to the progressBar component to determine the state of the bar. It's value must be given in the "x%" format with quotation marks.
 
 
-const BiasDisplay = ({header, description, leftLabel, rightLabel, centerLabel, barPercent, value, confidence}) => {
+const BiasDisplay = ({header, description, leftLabel, rightLabel, barPercent, value, confidence}) => {
     const [barState, setBarState] = useState(barPercent)
 
     return (
@@ -23,43 +23,39 @@ const BiasDisplay = ({header, description, leftLabel, rightLabel, centerLabel, b
                 {description}
             </div>
             <div className="results">
-                <div className="resultBoxContainer">
-                    <p className="resultHeader">Result</p>
-                    <table className="resultBoxFrame">
-                        <tr className="discreteBarBox">
-                            <DiscreteBar value={value} confidence={confidence}/>
+                <div className="discreteBarContainer">
+                    <p className="discreteBarHeader">Result</p>
+                    <table className="discreteBarTable">
+                        <tr>
+                            <DiscreteBar value={-1} confidence={0.5}/>
                         </tr>
-                        <tr className="labelBox">
-                            <td className="leftLabelBox">
-                                {leftLabel}
+                        <tr className="discreteBarLabels">
+                            <td className='discreteBarLeftLabel'>
+                                Left
                             </td>
-                            <td className="centerLabelBox">
-                                {centerLabel}
-                            </td>
-                            <td className="rightLabelBox">
-                                {rightLabel}
+                            <td className='discreteBarRightLabel'>
+                                Right
                             </td>
                         </tr>
                     </table>
                 </div>
-                <div className="confidenceBoxContainer">
-                    <p className="confidenceHeader">Confidence (%)</p>
-                    <table className="confidenceBoxFrame">
-                        <tr className="confidenceBarBox">
+                <div className="confidenceBarContainer">
+                    <p className="confidenceBarHeader">Confidence (%)</p>
+                    <table className="confidenceBarTable">
+                        <tr>
                             <PresenceBar presence={barState}/>
                         </tr>
-                        <tr className="confidenceLabelBox">
-                            <td className="leftLabelBox">
+                        <tr className="confidenceBarLabels">
+                            <td className='confidenceBarLeftLabel'>
                                 0
                             </td>
-                            <td className="rightLabelBox">
+                            <td className='confidenceBarRightLabel'>
                                 100
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
-
         </div>
     )
 }

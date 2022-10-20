@@ -43,75 +43,55 @@
     /* border: 1px solid #ff0000; /* Margin for testing/fine-tuning - Keep commented out */
 }
 
-.results {
-    font-family: 'ComfortaaReg';
-    position: absolute;
-    width: 350px;
-    height: 90px;
-    margin-top: 200px;
-    margin-left: 23px;
-    /* border: 1px solid #000dff; /* Margin for testing/fine-tuning - Keep commented out */
-    text-align: center; /* May need to be changed */
-    font-style: normal;
-    font-size: 16px;
-    line-height: 5px;
+.discreteBarContainer {
+    padding-top: 185px;
+    padding-left: 25px;
 }
 
-.resultHeader {
+.discreteBarHeader {
     font-family: 'ComfortaaReg';
-    font-style: normal;
     font-size: 15px;
+    font-weight: 500;
+    padding-left: 150px;
 }
 
-.confidenceHeader {
+.discreteBarLabels {
+    width: 100px;
+}
+
+.discreteBarLeftLabel {
     font-family: 'ComfortaaReg';
-    font-style: normal;
+    font-size: 14px;
+    padding-top: 32px;
+}
+
+.discreteBarRightLabel {
+    font-family: 'ComfortaaReg';
+    font-size: 14px;
+    padding-top: 32px;
+    padding-left: 274px;
+}
+
+.confidenceBarHeader {
+    font-family: 'ComfortaaReg';
     font-size: 15px;
+    font-weight: 500;
+    padding-left: 120px;
 }
 
-.labelBox {
+.confidenceBarContainer {
+    padding-left: 25px;
+}
+
+.confidenceBarLeftLabel {
     font-family: 'ComfortaaReg';
-    font-style: normal;
     font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-    padding-top: 30px;
+    padding-top: 32px;
 }
 
-.confidenceLabelBox {
+.confidenceBarRightLabel {
     font-family: 'ComfortaaReg';
-    font-style: normal;
     font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-}
-
-.resultBoxFrame {
-    width: 100%;
-    height: 100%;
-}
-
-.confidenceBoxFrame {
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    bottom: 100px;
-}
-
-.leftLabelBox {
-    font-family: 'ComfortaaReg';
-    text-align: left;
-    padding-top: 30px;
-}
-
-.centerLabelBox {
-    font-family: 'ComfortaaReg';
-    text-align: center;
-    padding-top: 30px;
-}
-
-.rightLabelBox {
-    font-family: 'ComfortaaReg';
-    text-align: right;
-    padding-top: 35px;
+    padding-top: 32px;
+    padding-left: 309px;
 }
