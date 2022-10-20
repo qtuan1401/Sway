@@ -5,13 +5,10 @@ import Aidan from './headshots/aidan.png'
 
 const AboutUsPage = () => {
     return (
-
         <div class="aboutUsDisplay">
             <div class="aboutUsHeader">
                 About Us 
             </div>
-
-            <br/>
             <div class="aboutUsTextDisplayContainer">
                 <div class="aboutUsTextDisplay">
                     <div class="aboutUsBodyTitle"> Our Story </div>
