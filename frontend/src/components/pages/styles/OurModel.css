@@ -54,8 +54,8 @@
 
 .linkDisplayHeader {
     position: absolute;
-    padding-top: 15px;
-    padding-left: 650px;
+    padding-top: 690px;
+    padding-left: 630px;
     font-size: 17px;
     font-family: 'ComfortaaReg';
     font-style: normal;
@@ -63,10 +63,25 @@
 
 .ourModelLinkDisplayContainer {
     position: absolute;
-    padding-top: 670px;
+    padding-top: 740px;
 }
 
-.ourModelLinkDisplay {
+.centerAlignImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20%; 
+    overflow: hidden;
+}
+
+.ourModelBodyTitle {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
+}
+
+div.ourModelLinkDisplay {
     box-sizing: border-box;
     
     position: absolute;
@@ -76,4 +91,7 @@
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
     border-radius: 8px;
+    font-size: 17px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
 }
