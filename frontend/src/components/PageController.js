@@ -13,36 +13,90 @@ const PageController = ({activePage, activePageStateHandler}) => {
     const [politicalData, setPoliticalData] = useState()
     const [qualityData, setQualityData] = useState()
     const [genderData, setGenderData] = useState()
+    const [genderConfidence, setGenderConfidence] = useState()
+    const [politicalConfidence, setPoliticalConfidence] = useState()
+    const [qualityConfidence, setQualityConfidence] = useState()
     const [overall, setOverall] = useState(0)
+    const [accessToken, setAccessToken] = useState()
 
     const handleSubmitButtonClickEvent = () => {
-        if(inputActiveState == 1) {
-            queryNyckelPolitical(urlBoxText)
-            queryNyckelQuality(urlBoxText)
-            queryNyckelGender(urlBoxText)
-            calculateOverall()
-            activePageStateHandler(1)
-        } else if(inputActiveState == 2) {
-            queryNyckelPolitical(textBoxText)
-            queryNyckelQuality(textBoxText)
-            queryNyckelGender(textBoxText)
-            calculateOverall()
-            activePageStateHandler(1)
-        }
+        fetch('https://www.nyckel.com/connect/token', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'client_id=nyp7aqerzzvlegnngu937tbpb0tcmrij&client_secret=zznj7bxwmelf3zdbmre1esxtmzvax157hblet3g4wcht8wmcmhqudg572tw7fmyk&grant_type=client_credentials'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.access_token)
+            if(inputActiveState == 1) {
+                queryNyckelPolitical(urlBoxText, data.access_token)
+                queryNyckelQuality(urlBoxText, data.access_token)
+                queryNyckelGender(urlBoxText, data.access_token)
+                calculateOverall()
+                activePageStateHandler(1)
+            } else if(inputActiveState == 2) {
+                queryNyckelPolitical(textBoxText, data.access_token)
+                queryNyckelQuality(textBoxText, data.access_token)
+                queryNyckelGender(textBoxText, data.access_token)
+                calculateOverall()
+                activePageStateHandler(1)
+            }
+        });
     }
 
-    const queryNyckelPolitical = (str) => {
+    const queryNyckelPolitical = (str, token) => {
         // Query code here for political bias
+        console.log("POLITICAL QUERY")
+        fetch('https://www.nyckel.com/v1/functions/fdcyy6xp6ito24tn/invoke', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                {"data": str}
+            )
+        })
+        .then(response => response.json())
+        .then(data => console.log(data));
         setPoliticalData(30) // Temporary test code, delete when possible
     }
 
-    const queryNyckelQuality = (str) => {
+    const queryNyckelQuality = (str, token) => {
         // Query code here for data quality/reliability
+        console.log("QUALITY QUERY")
+        fetch('https://www.nyckel.com/v1/functions/mtti3fgv03vtl07p/invoke', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                {"data": str}
+            )
+        })
+        .then(response => response.json())
+        .then(data => console.log(data));
         setQualityData(50) // Temporary test code, delete when possible
     }
 
-    const queryNyckelGender = (str) => {
+    const queryNyckelGender = (str, token) => {
         // Query code here for gender bias
+        console.log("GENDER QUERY")
+        fetch('https://www.nyckel.com/v1/functions/ky72dde3ymqe0s4w/invoke', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                {"data": str}
+            )
+        })
+        .then(response => response.json())
+        .then(data => console.log(data));
         setGenderData(90) // Temporary test code, delete when possible
     }
 
