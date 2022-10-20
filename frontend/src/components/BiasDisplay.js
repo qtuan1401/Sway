@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import PresenceBar from './biasDisplay-components/presenceBar.js'
+import DiscreteBar from './biasDisplay-components/discreteBar.js'
 import './styles/BiasDisplay.css'
 
 // Bias Display Component to be used on the result display page
@@ -12,7 +13,7 @@ import './styles/BiasDisplay.css'
 // barPercent - The bar percent prop will be passed through this component to the progressBar component to determine the state of the bar. It's value must be given in the "x%" format with quotation marks.
 
 
-const BiasDisplay = ({header, description, leftLabel, rightLabel, barPercent}) => {
+const BiasDisplay = ({header, description, leftLabel, rightLabel, centerLabel, barPercent, value, confidence}) => {
     const [barState, setBarState] = useState(barPercent)
 
     return (
@@ -22,20 +23,41 @@ const BiasDisplay = ({header, description, leftLabel, rightLabel, barPercent}) =
                 {description}
             </div>
             <div className="results">
-                <p className="resultHeader">Presense in text:</p>
-                <table className="resultBoxFrame">
-                    <tr className="presenceBarBox">
-                        <PresenceBar presence={barState}/>
-                    </tr>
-                    <tr className="labelBox">
-                        <td className="leftLabelBox">
-                            {leftLabel}
-                        </td>
-                        <td className="rightLabelBox">
-                            {rightLabel}
-                        </td>
-                    </tr>
-                </table>
+                <div className="resultBoxContainer">
+                    <p className="resultHeader">Result</p>
+                    <table className="resultBoxFrame">
+                        <tr className="discreteBarBox">
+                            <DiscreteBar value={value} confidence={confidence}/>
+                        </tr>
+                        <tr className="labelBox">
+                            <td className="leftLabelBox">
+                                {leftLabel}
+                            </td>
+                            <td className="centerLabelBox">
+                                {centerLabel}
+                            </td>
+                            <td className="rightLabelBox">
+                                {rightLabel}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div className="confidenceBoxContainer">
+                    <p className="confidenceHeader">Confidence (%)</p>
+                    <table className="confidenceBoxFrame">
+                        <tr className="confidenceBarBox">
+                            <PresenceBar presence={barState}/>
+                        </tr>
+                        <tr className="confidenceLabelBox">
+                            <td className="leftLabelBox">
+                                0
+                            </td>
+                            <td className="rightLabelBox">
+                                100
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
         </div>
@@ -46,7 +68,7 @@ BiasDisplay.defaultProps = {
     headerText: 'Bias Type',
     desc: "This is the description box. The information in this box is a brief description of the bias in question. The borders of the div that manages this text, can be altered in BiasDisplay.css",
     leftLabel: "Left Label",
-    rightLabel: "Right Label"
+    rightLabel: "Right Label",
 }
 
 export default BiasDisplay;

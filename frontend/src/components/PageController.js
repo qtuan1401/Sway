@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import ResultsPage from './pages/ResultsPage'
 import OurModelPage from './pages/OurModelPage'
 import AboutUsPage from './pages/AboutUsPage'
+import LinksPage from './pages/LinksPage'
 
 const PageController = ({activePage, activePageStateHandler}) => {
     const [inputActiveState, setInputActiveState] = useState()
@@ -69,26 +70,33 @@ const PageController = ({activePage, activePageStateHandler}) => {
                         header: "Political Bias", 
                         description: "The degree to which the text provided seems to be directed towards a specific political ideology. The bar below, respresents which side the data was evaluated by a neural network as being closer towards.", 
                         leftLabel: "Left", 
-                        rightLabel: "Right", 
-                        barPercent: `${politicalData}%`
+                        centerLabel: "Center",
+                        rightLabel: "Right",
+                        barPercent: `${politicalData}%`,
+                        value: 1,
+                        confidence:  0.5
                     }} 
                     two={{
                         header: "Gender Bias", 
-                        description: "The degree to which the text provided seems to be aimed towards a specific gender. The bar below, represents which gender (if any) we have predicted to be the primary audience of the text. It's position is proportional to the confidence of the neural network in the result.", 
+                        description: "The degree to which the text provided seems to be aimed towards a specific gender. The bar below, represents which gender (if any) we have predicted to be the primary audience of the text.", 
                         leftLabel: "Male", 
-                        rightLabel: "Female", 
-                        barPercent: `${genderData}%`
+                        rightLabel: "Female",
+                        barPercent: `${genderData}%`,
+                        value: 1,
+                        confidence:  0.5
                     }} 
                     three={{
                         header: "Data Reliability", 
-                        description: "Sample Description", 
-                        leftLabel: "Left", 
-                        rightLabel: "Right", 
-                        barPercent: `${qualityData}%`
+                        description: "The degree to which the text provided seems to be reliable. This is a measure of the presense or lack thereof of misinformation and fact driven journalism. More information can be found in the Our Model page.", 
+                        leftLabel: "Low",
+                        rightLabel: "High",
+                        barPercent: `${qualityData}%`,
+                        value: -1,
+                        confidence:  0.75
                     }}
                     overall={{
                         header: "Overall",
-                        description: "Sample Description",
+                        description: "The overall bias of the text is determined as a function of the political/gender bias, data reliability and the confidence that the neural network has in the evaluation returned. The purpose of this value is to provide a general idea of the degree to which a text seems to be addressing a marginal viewpoint. It should be noted that this value does not in any way, indicate malicious intent on behalf of the author, as entirely factual journalism could still be detected to be addressing a specific audience.",
                         percent: overall
                     }}
                 />
@@ -106,7 +114,13 @@ const PageController = ({activePage, activePageStateHandler}) => {
                 <AboutUsPage/>
             </div>
         )
-    } // Page 4 not added in since we aren't 100% on what it will be
+    } else if(activePage == 4) {
+        return(
+            <div className="linksPageContainer">
+                <LinksPage/>
+            </div>
+        )
+    }
 }
 
 export default PageController;

@@ -10,7 +10,7 @@
 
     position: absolute;
     width: 1240px;
-    height: 353px;
+    height: 300px;
 
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
@@ -45,6 +45,5 @@
 
 .radialbar {
     margin-left: 66%;
-    margin-top: 2%;
 }
 

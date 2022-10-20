@@ -2,6 +2,7 @@ import './styles/AboutUs.css'
 import Blank from './headshots/blank-profile-picture-973460_1280.webp'
 import Sam from './headshots/sam_headshot.png'
 import Aidan from './headshots/aidan.png'
+
 const AboutUsPage = () => {
     return (
 

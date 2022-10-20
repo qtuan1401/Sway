@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './presenceBar.css'
+import './styles/presenceBar.css'
 
 // Bias Display Component to be used on the result display page
 
