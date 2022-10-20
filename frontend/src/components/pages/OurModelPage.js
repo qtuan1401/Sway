@@ -1,5 +1,9 @@
 import './styles/OurModel.css'
-
+import WEKA from './aboutUsLogos/weka.png'
+import PYTORCH from './aboutUsLogos/pytorch.png'
+import NYCKEL from './aboutUsLogos/nyckel.png'
+import BERT from './aboutUsLogos/bert.png'
+import KERAS from './aboutUsLogos/keras.png'
 // Lots of garbage text below to demo scrollbar.
 // Replace this text with the appropriate information.
 
@@ -11,25 +15,67 @@ const OurModelPage = () => {
             </div>
             <div className="ourModelTextDisplayContainer">
                 <div className="ourModelTextDisplay">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu dictum varius duis at consectetur lorem donec massa. Commodo viverra maecenas accumsan lacus. Eget duis at tellus at urna condimentum mattis. Quam adipiscing vitae proin sagittis nisl rhoncus. Volutpat sed cras ornare arcu dui vivamus arcu. Non curabitur gravida arcu ac tortor. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Consequat interdum varius sit amet. Nullam non nisi est sit amet facilisis magna etiam. Purus semper eget duis at tellus at urna condimentum mattis. Sed adipiscing diam donec adipiscing tristique. Quis viverra nibh cras pulvinar mattis nunc sed blandit libero. Quisque id diam vel quam elementum. Tortor consequat id porta nibh venenatis cras. Quisque id diam vel quam elementum pulvinar etiam non. Elit scelerisque mauris pellentesque pulvinar.
-                    Nunc sed augue lacus viverra vitae congue eu. Quam id leo in vitae. Adipiscing elit pellentesque habitant morbi. Pharetra sit amet aliquam id diam maecenas ultricies mi. Urna porttitor rhoncus dolor purus non enim praesent elementum. Viverra justo nec ultrices dui sapien eget mi proin. Tortor dignissim convallis aenean et. Rutrum quisque non tellus orci ac auctor augue mauris. Laoreet sit amet cursus sit. Ut venenatis tellus in metus vulputate eu scelerisque felis. Laoreet sit amet cursus sit amet dictum sit. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Enim ut tellus elementum sagittis vitae et leo duis ut. Nunc pulvinar sapien et ligula ullamcorper. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Nulla malesuada pellentesque elit eget gravida cum. Consectetur libero id faucibus nisl tincidunt eget nullam non. Sollicitudin nibh sit amet commodo nulla facilisi.
-                    Eget duis at tellus at urna condimentum mattis pellentesque. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Orci nulla pellentesque dignissim enim. Ullamcorper malesuada proin libero nunc. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Vitae elementum curabitur vitae nunc sed velit. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. A pellentesque sit amet porttitor eget dolor morbi non. Egestas congue quisque egestas diam in arcu. Quisque egestas diam in arcu cursus euismod. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Eget est lorem ipsum dolor sit amet consectetur adipiscing. Amet purus gravida quis blandit. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Tristique magna sit amet purus. Diam maecenas ultricies mi eget mauris. In eu mi bibendum neque egestas. Nec nam aliquam sem et tortor consequat id porta nibh.
-                    Proin fermentum leo vel orci porta non pulvinar neque laoreet. Iaculis eu non diam phasellus vestibulum lorem sed risus ultricies. Diam sollicitudin tempor id eu. Leo in vitae turpis massa sed elementum tempus egestas. Sem fringilla ut morbi tincidunt. Rhoncus dolor purus non enim praesent elementum facilisis. Ut tortor pretium viverra suspendisse potenti nullam ac. Tortor posuere ac ut consequat semper. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Risus in hendrerit gravida rutrum quisque non tellus orci. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus.
-                    Cras fermentum odio eu feugiat. Dictumst quisque sagittis purus sit. Facilisi morbi tempus iaculis urna. Dolor sit amet consectetur adipiscing elit pellentesque habitant. Mattis aliquam faucibus purus in massa tempor nec feugiat. Nisl suscipit adipiscing bibendum est ultricies integer quis. Nec nam aliquam sem et tortor. At consectetur lorem donec massa sapien faucibus. Nec dui nunc mattis enim ut tellus elementum sagittis vitae. Morbi tincidunt augue interdum velit euismod in pellentesque massa placerat. Porta nibh venenatis cras sed. Aliquet lectus proin nibh nisl condimentum. Purus viverra accumsan in nisl nisi scelerisque eu. Egestas erat imperdiet sed euismod nisi porta lorem. Phasellus faucibus scelerisque eleifend donec.
-                    Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique. Eu volutpat odio facilisis mauris sit amet massa. Duis ut diam quam nulla porttitor. Tincidunt tortor aliquam nulla facilisi cras. Augue ut lectus arcu bibendum at varius vel. Ornare arcu odio ut sem nulla pharetra. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec. In ornare quam viverra orci sagittis eu. Id cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Tellus cras adipiscing enim eu turpis egestas.
-                    Et tortor at risus viverra adipiscing at in tellus integer. Id cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Enim neque volutpat ac tincidunt vitae semper quis lectus nulla. Risus at ultrices mi tempus. Mi in nulla posuere sollicitudin. Tellus elementum sagittis vitae et leo duis ut. Diam vulputate ut pharetra sit amet aliquam id. Nec feugiat nisl pretium fusce id velit ut tortor pretium. Sed sed risus pretium quam vulputate dignissim. Elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi.
-                    Nisi vitae suscipit tellus mauris a diam maecenas sed. Nullam ac tortor vitae purus faucibus ornare suspendisse. Nec nam aliquam sem et tortor consequat id. Faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Magna eget est lorem ipsum dolor. Dui ut ornare lectus sit amet. Velit euismod in pellentesque massa. Tortor condimentum lacinia quis vel eros donec ac odio. Aliquet porttitor lacus luctus accumsan tortor posuere. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Eu volutpat odio facilisis mauris sit amet massa vitae.
-                    Nulla at volutpat diam ut venenatis tellus in metus. Purus faucibus ornare suspendisse sed nisi lacus sed. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Felis eget nunc lobortis mattis aliquam. Volutpat est velit egestas dui id ornare arcu odio. Massa sed elementum tempus egestas sed sed risus. Integer vitae justo eget magna fermentum iaculis eu non diam. Morbi tristique senectus et netus et malesuada fames ac turpis. Est sit amet facilisis magna etiam. Libero volutpat sed cras ornare. Mauris nunc congue nisi vitae suscipit tellus mauris a diam.
-                    Eu mi bibendum neque egestas. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. In est ante in nibh. Venenatis a condimentum vitae sapien pellentesque habitant. Eget duis at tellus at urna condimentum mattis pellentesque. At lectus urna duis convallis convallis tellus id interdum. Gravida rutrum quisque non tellus orci ac auctor augue. Turpis egestas pretium aenean pharetra. Nulla facilisi cras fermentum odio eu feugiat. Morbi quis commodo odio aenean sed adipiscing diam donec adipiscing. Consequat ac felis donec et odio pellentesque diam. Sit amet volutpat consequat mauris. Quis blandit turpis cursus in hac habitasse.
+                    <div class='ourModelBodyTitle'> Introduction </div>
+                    <p>The process of designing, training, and utilising our model has been a challenging, 
+                        thought-provoking journey that has led us to use multiple different approaches to machine learning. 
+                        Furthermore, throughout this learning experience, our team tried to implement many different styles 
+                        of models which all didn’t fully utilise what we were hoping for. </p>
+                    <img src={KERAS} alt="Dev" class='centerAlignImage'/>
+                    <p>Within the first stage of this project, we attempted to create a Political Bias classifier with the 
+                        TensorFlow JS library interfacing with Keras, one of Pythons Deep Learning Algorithms. A lot of 
+                        knowledge gathering took place at this stage as our team must rapidly upskill and learning how to 
+                        build a Machine Learning Model from the ground up. At this stage we were only focused on building a 
+                        supervised learning model, meaning the model would classify data based on a label we provided. 
+                        We were able to get a political bias model to work at this stage, however the accuracy was low, being 
+                        decent at predicting centralised data, but poor at predicting any data that swung to the left or right.  </p>
+                    <img src={PYTORCH} alt="Dev" class='centerAlignImage'/>
+                    <p>Our next approach used a different Python3 Machine Learning Library, this time utilising PyTorch. 
+                        We found this library to be easier to interact with than Keras, but we had further troubles in developing our model.
+                         At this stage, we tried to broaden our knowledge and tackle an unsupervised learning model which means
+                          that data would be categorised not based on labels provided by us. We were able to get a Gender Bias model 
+                          working at this stage, however the accuracy was subpar (being no more than 40%) accurate. </p>
+                    <img src={BERT} alt="Dev" class='centerAlignImage'/>
+                    <p>The BERT Natural Language Processor (NLP) was critical in helping us create our earlier models. 
+                        BERT is a Library pretrained and developed, available to anyone to use for NLP.  
+                        We attempted to use this library to create both the supervised and unsupervised learning models shown above. 
+                        All these models worked, we felt that improvements needed to be done to increase the precision of them. </p>
+                    <img src={WEKA} alt="Dev" class='centerAlignImage'/>
+                    <p>For our next approach, we found Weka 3: Machine Learning Software in Java built by the University of Waikato, 
+                        New Zealand, which is an online Machine Learning tool to classify datasets provided to it. 
+                        There was a project, using the WEKA software called AutoWeka which was created to help people to access 
+                        machine learning and classify data for them. We tried to run this program on our collected datasets and 
+                        came up with models of reasonably high precision. However, as this project is written in Java and the backend 
+                        of our website is written in Python, getting the 2 to work together was challenging and as such, we again abandoned 
+                        this idea. </p>
+                    <img src={NYCKEL} alt="Dev" class='centerAlignImage'/>
+                    <p>Nyckel is an online free tool to create machine learning Ais at the click of a button. 
+                        The website provides an API framework while also being a backend to host the data that we use to train our models.
+                         We decided to shift our backend onto Nyckel and use a classifier we built with this tool as our machine learning model. 
+                         This is an excellent solution to the problems we were having as A. The model is on a cloud server, 
+                         which means that the heavy lifting of the model computations does not have to take place on a client’s computer and 
+                         B. the backend has already been set up to interface with a JS frontend which our product will be using. 
+                         This model ended up being about 65% accurate for both the Gender Bias and Political Bias models, which we are very happy with. </p>
+                    <div class='ourModelBodyTitle'> Conclusion </div>
+                    <p>Overall, this process has been a fun and engaging one, with all team members learning a great deal about Machine
+                         Learning classification along the way. We are very happy with the model that we have finally created and are proud of how 
+                         far we have come in our knowledge about this everchanging subject. </p>
                 </div>
+            </div>
+            {/* <div className="linkDisplayHeader">
+                Links
             </div>
             <div className="ourModelLinkDisplayContainer">
                 <div className="ourModelLinkDisplay">
-                    <div className="linkDisplayHeader">
-                        Links
-                    </div>
+                    <a href='https://github.com/qtuan1401/Sway' target="_blank"> GitHub Link </a> <br></br> <br></br>
+                    <a href='https://keras.io' target="_blank"> Keras Link </a> <br></br> <br></br>
+                    <a href='https://pytorch.org' target="_blank"> PyTorch Link </a> <br></br> <br></br>
+                    <a href='https://huggingface.co/docs/transformers/model_doc/bert' target="_blank"> BERT Link </a> <br></br> <br></br>
+                    <a href='https://www.cs.waikato.ac.nz/ml/weka/' target="_blank"> WEKA Link </a> <br></br> <br></br>
+                    <a href='https://www.nyckel.com' target="_blank"> Nyckel Link </a> <br></br> <br></br>
+                    <a href='https://adfontesmedia.com/interactive-media-bias-chart/' target="_blank"> AdFontes Dataset </a> <br></br> <br></br>
+                    <a href='https://www.kaggle.com/datasets/snapcrack/all-the-news' target="_blank"> Kaggle All The News Dataset </a> <br></br> <br></br>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
