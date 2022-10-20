@@ -15,7 +15,7 @@ const DiscreteBar = ({value, confidence}) => {
         if(value == 1 || value == -1) {
             setBarPos(offsetToCenter + (124*confidence))
         }
-    }, [])
+    }, [value, confidence])
 
     if(value == 0) {
         return (

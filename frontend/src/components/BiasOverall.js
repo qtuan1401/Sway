@@ -1,5 +1,5 @@
 import './styles/BiasOverall.css'
-import Chart from 'react-apexcharts'
+import React, { useState, useEffect } from 'react'
 import RadialBar from './biasOverall-components/radialbar.js'
 
 // Prop Descriptions:
@@ -8,6 +8,8 @@ import RadialBar from './biasOverall-components/radialbar.js'
 // percent - The label and percentage of the radial bar
 
 const BiasOverall = ({header, description, percent}) => {
+    const [percentState, setPercentState] = useState(percent)
+
     return (
         <div className="BiasOverallContainer">
             <div className="overallBoxHeader">
@@ -17,7 +19,7 @@ const BiasOverall = ({header, description, percent}) => {
                 {description}
             </div>
             <div className="radialbar">  
-                <RadialBar percent={percent}/>
+                <RadialBar percent={percentState}/>
             </div>
         </div>
     )

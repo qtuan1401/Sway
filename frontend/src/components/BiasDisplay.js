@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PresenceBar from './biasDisplay-components/presenceBar.js'
 import DiscreteBar from './biasDisplay-components/discreteBar.js'
 import './styles/BiasDisplay.css'
@@ -10,11 +10,19 @@ import './styles/BiasDisplay.css'
 // description - Description underneath heading on each display tile
 // leftLabel - The label that will be under the left side of the bar
 // rightLabel - The label that will be under the right side of the bar
-// barPercent - The bar percent prop will be passed through this component to the progressBar component to determine the state of the bar. It's value must be given in the "x%" format with quotation marks.
+// value - A discrete value between -1 and 1 where -1 indicates the bar to move left and 1 moves it right. 0 keeps it in the center
+// confidence - This value is used to determine the value of the confidence bar and the magnitude to which the discrete bar shifts left or right
+// rightLabelOffset - An offset value that helps position the right label to prevent it from being misaligned with the bar
 
 
-const BiasDisplay = ({header, description, leftLabel, rightLabel, barPercent, value, confidence}) => {
-    const [barState, setBarState] = useState(barPercent)
+const BiasDisplay = ({header, description, leftLabel, rightLabel, value, confidence, rightLabelOffset}) => {
+    const [discreteBarValue, setDiscreteBarValue] = useState(value)
+    const [barConfidence, setBarConfidence] = useState(confidence)
+
+    useEffect(() => {
+        setDiscreteBarValue(value)
+        setBarConfidence(confidence)
+    }, [value, confidence])
 
     return (
         <div className="biasDisplay">
@@ -27,14 +35,14 @@ const BiasDisplay = ({header, description, leftLabel, rightLabel, barPercent, va
                     <p className="discreteBarHeader">Result</p>
                     <table className="discreteBarTable">
                         <tr>
-                            <DiscreteBar value={-1} confidence={0.5}/>
+                            <DiscreteBar value={discreteBarValue} confidence={barConfidence}/>
                         </tr>
                         <tr className="discreteBarLabels">
                             <td className='discreteBarLeftLabel'>
-                                Left
+                                {leftLabel}
                             </td>
-                            <td className='discreteBarRightLabel'>
-                                Right
+                            <td className='discreteBarRightLabel' style={{paddingLeft: `${274 - rightLabelOffset}px`}}>
+                                {rightLabel}
                             </td>
                         </tr>
                     </table>
@@ -43,7 +51,7 @@ const BiasDisplay = ({header, description, leftLabel, rightLabel, barPercent, va
                     <p className="confidenceBarHeader">Confidence (%)</p>
                     <table className="confidenceBarTable">
                         <tr>
-                            <PresenceBar presence={barState}/>
+                            <PresenceBar presence={(confidence*100)+"%"}/>
                         </tr>
                         <tr className="confidenceBarLabels">
                             <td className='confidenceBarLeftLabel'>
@@ -65,6 +73,7 @@ BiasDisplay.defaultProps = {
     desc: "This is the description box. The information in this box is a brief description of the bias in question. The borders of the div that manages this text, can be altered in BiasDisplay.css",
     leftLabel: "Left Label",
     rightLabel: "Right Label",
+    rightLabelOffset: 0
 }
 
 export default BiasDisplay;

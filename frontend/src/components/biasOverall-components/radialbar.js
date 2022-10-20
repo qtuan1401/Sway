@@ -1,5 +1,5 @@
 import Chart from 'react-apexcharts'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 // Only the series prop should be changed.
 // Font will need to be changed to comfortaa at some point for consistency
