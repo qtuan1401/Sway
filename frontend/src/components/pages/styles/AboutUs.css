@@ -1,7 +1,19 @@
-.tempPlaceholder {
-    padding-left: 200px;
-    padding-top: 100px;
-    position: absolute;
+.aboutUsDisplay {
+    padding-left: 350px;
+}
+
+.aboutUsDisplayContainer {
+  position: absolute;
+  padding-top: 150px;
+}
+
+.aboutUsHeader {
+  position: absolute;
+  padding-top: 75px;
+  padding-left: 540px;
+  font-size: 60px;
+  font-family: 'ComfortaaReg';
+  font-style: normal;
 }
 
 
@@ -72,21 +84,29 @@
 }
 
 .aboutUsTextDisplayContainer{
-  padding-bottom: 20px;
-
+  position: absolute;
+  padding-top: 150px;
 }
 
-.aboutUsTextDisplay{
+.aboutUsTextDisplay {
   box-sizing: border-box;
-  position:relative;
-  width: auto;
-  height: auto;
+  position: absolute;
+  width: 1381px;
+  height: 500px;
   background: #FCFCFC;
   border: 1px solid #D2D2D2;
   border-radius: 8px;
   overflow-x: hidden;
   overflow-y: scroll;
   font-size: 17px;
+  font-family: 'ComfortaaReg';
+  font-style: normal;
+}
+
+
+.aboutUsBodyTitle {
+  text-align: center;
+  font-size: 40px;
   font-family: 'ComfortaaReg';
   font-style: normal;
 }

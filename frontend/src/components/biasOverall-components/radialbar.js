@@ -9,10 +9,18 @@ const RadialBar = ({percent}) => {
         options: {
             chart: {
                 height: 280,
-                type: "radialBar"
+                type: "radialBar",
+                fontFamily: 'ComfortaaReg',
             },
             stroke: {
                 lineCap: "round",
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'none',
+                    }
+                },
             },
             colors: ["#6DA3E3"],
             plotOptions: {
@@ -32,7 +40,7 @@ const RadialBar = ({percent}) => {
                             color: "#111",
                             fontSize: "40px",
                             fontWeight: 'lighter', 
-                            show: true,
+                            show: true
                         }
                     }
                 }
