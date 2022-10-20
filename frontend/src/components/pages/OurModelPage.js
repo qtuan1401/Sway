@@ -61,21 +61,6 @@ const OurModelPage = () => {
                          far we have come in our knowledge about this everchanging subject. </p>
                 </div>
             </div>
-            {/* <div className="linkDisplayHeader">
-                Links
-            </div>
-            <div className="ourModelLinkDisplayContainer">
-                <div className="ourModelLinkDisplay">
-                    <a href='https://github.com/qtuan1401/Sway' target="_blank"> GitHub Link </a> <br></br> <br></br>
-                    <a href='https://keras.io' target="_blank"> Keras Link </a> <br></br> <br></br>
-                    <a href='https://pytorch.org' target="_blank"> PyTorch Link </a> <br></br> <br></br>
-                    <a href='https://huggingface.co/docs/transformers/model_doc/bert' target="_blank"> BERT Link </a> <br></br> <br></br>
-                    <a href='https://www.cs.waikato.ac.nz/ml/weka/' target="_blank"> WEKA Link </a> <br></br> <br></br>
-                    <a href='https://www.nyckel.com' target="_blank"> Nyckel Link </a> <br></br> <br></br>
-                    <a href='https://adfontesmedia.com/interactive-media-bias-chart/' target="_blank"> AdFontes Dataset </a> <br></br> <br></br>
-                    <a href='https://www.kaggle.com/datasets/snapcrack/all-the-news' target="_blank"> Kaggle All The News Dataset </a> <br></br> <br></br>
-                </div>
-            </div> */}
         </div>
     )
 }

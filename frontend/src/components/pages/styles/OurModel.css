@@ -41,7 +41,7 @@
     box-sizing: border-box;
     position: absolute;
     width: 1381px;
-    height: 500px;
+    height: 800px;
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
     border-radius: 8px;
@@ -52,25 +52,11 @@
     font-style: normal;
 }
 
-.linkDisplayHeader {
-    position: absolute;
-    padding-top: 690px;
-    padding-left: 630px;
-    font-size: 17px;
-    font-family: 'ComfortaaReg';
-    font-style: normal;
-}
-
-.ourModelLinkDisplayContainer {
-    position: absolute;
-    padding-top: 740px;
-}
-
 .centerAlignImage {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 20%; 
+    height: 10%; 
     overflow: hidden;
 }
 
