@@ -1,4 +1,3 @@
-import json
 from flask import Flask, request
 from flask_cors import CORS
 from bs4 import BeautifulSoup
