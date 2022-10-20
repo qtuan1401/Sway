@@ -23,6 +23,15 @@
     padding-left: 200px;
 }
 
+.ourModelHeader {
+    position: absolute;
+    padding-top: 75px;
+    padding-left: 510px;
+    font-size: 60px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
+}
+
 .ourLinksHeader1 {
     position: absolute;
     padding-top: 100px;
@@ -68,6 +77,9 @@
 .ourLinksDisplay1 {
     box-sizing: border-box;
     position: absolute;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center; 
     width: 1381px;
     height: 100px;
     background: #FCFCFC;
@@ -84,6 +96,9 @@
 .ourLinksDisplay2 {
     box-sizing: border-box;
     position: absolute;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center; 
     width: 1381px;
     height: 300px;
     background: #FCFCFC;
@@ -100,6 +115,9 @@
 .ourLinksDisplay3 {
     box-sizing: border-box;
     position: absolute;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center; 
     width: 1381px;
     height: 200px;
     background: #FCFCFC;

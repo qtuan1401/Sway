@@ -16,8 +16,7 @@ const LinksPage = () => {
             </div>
             <div className="ourLinksTextDisplayContainer2">
                 <div className="ourLinksDisplay2">
-                    <a href='https://keras.io' target="_blank" rel="noreferrer" class='ourLinksLink'> Keras Link </a> <p> A link to the Keras Python Library used for the inital machine learning model </p><br></br> <br></br>
-                    <a href='https://pytorch.org' target="_blank" rel="noreferrer" class='ourLinksLink'> PyTorch Link </a> <p> A link to PyTorch, the python library used to build the second concept model </p><br></br> <br></br>
+                    <a href='https://keras.io' target="_blank" rel="noreferrer" class='ourLinksLink'> Keras Link </a> <p> A link to the Keras Python Library used for the inital machine learning model </p><br></br> <br></br>                     <a href='https://pytorch.org' target="_blank" rel="noreferrer" class='ourLinksLink'> PyTorch Link </a> <p> A link to PyTorch, the python library used to build the second concept model </p><br></br> <br></br>
                     <a href='https://huggingface.co/docs/transformers/model_doc/bert' target="_blank" rel="noreferrer" class='ourLinksLink'> BERT Link </a> <p> A link to BERT (Bidirectional Encoder Representations from Transformers) used as a classifier for our original models </p><br></br> <br></br>
                     <a href='https://www.cs.waikato.ac.nz/ml/weka/' target="_blank" rel="noreferrer" class='ourLinksLink'> WEKA Link </a> <p> A link to the University of Waikato New Zealand Machine Learning Classifier tool used to make one of our models </p><br></br> <br></br>
                     <a href='https://www.nyckel.com' target="_blank" rel="noreferrer" class='ourLinksLink'> Nyckel Link </a> <p> A link to the website Nyckel, used to host our data and provide the API for querying our model </p> <br></br> <br></br>
