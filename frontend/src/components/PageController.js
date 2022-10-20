@@ -22,10 +22,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
     const [qualityConfidence, setQualityConfidence] = useState()
     const [overall, setOverall] = useState(0)
 
-    useEffect(() => {
-        calculateOverall()
-    }, [politicalData, politicalConfidence, genderData, genderConfidence, qualityData, qualityConfidence])
-
     const handleSubmitButtonClickEvent = () => {
         fetch('https://www.nyckel.com/connect/token', {
             method: 'POST',

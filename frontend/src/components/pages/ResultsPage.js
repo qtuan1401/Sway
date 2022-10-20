@@ -13,7 +13,6 @@ const ResultsPage = ({one, two, three, overall}) => {
         setPoliticalCard(one)
         setGenderCard(two)
         setQualityCard(three)
-        setOverallCard(overall)
     }, [one, two, three])
 
     return (
@@ -55,7 +54,7 @@ const ResultsPage = ({one, two, three, overall}) => {
                 </div>
             </div>
             <div className="overallResultPanel">
-                <BiasOverall header={overallCard.header} description={overallCard.description} percent={overallCard.percent}/>
+                <BiasOverall header={overall.header} description={overall.description} percent={overall.percent}/>
             </div>
         </div>
     )
