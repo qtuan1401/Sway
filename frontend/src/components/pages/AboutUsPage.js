@@ -2,6 +2,7 @@ import './styles/AboutUs.css'
 import Blank from './headshots/blank-profile-picture-973460_1280.webp'
 import Sam from './headshots/sam_headshot.png'
 import Aidan from './headshots/aidan.png'
+import Chrisvin from './headshots/chrisvin.png'
 
 const AboutUsPage = () => {
     return (
@@ -39,12 +40,12 @@ const AboutUsPage = () => {
                         <div class="row">
                         <div class="column">
                             <div class="card">
-                                <img src={Blank} alt="Dev" width="100%"/>
+                                <img src={Chrisvin} alt="Dev" width="100%"/>
                                 <div class="container">
                                     <h2>Chrisvin Joseph</h2>
                                     <p class="title">Project Leader</p>
-                                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                                    <p>example1@example.com</p>
+                                    <p>Hello, I'm Chris. I am doing a Bachelor of Computer Science degree with a major in Cyber security and Digital Systems security. I enjoy gaming, hiking, coding and playing my guitar. I hope that one day, I can use my knowledge to contribute in some way to space exploration.</p>
+                                    <p>josephchrisvin@gmail.com</p>
                                     <p><button class="button" onClick={() => {navigator.clipboard.writeText("example1@example.com")}}>Copy Email</button></p>
                                 </div>
                             </div>
