@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "apexcharts": "^3.35.5",
-    "reacr": "^1.0.0",
-    "react-apexcharts": "^1.4.0",
-    "react-copy-to-clipboard": "^5.1.0"
-  }
-}

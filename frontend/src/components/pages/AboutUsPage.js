@@ -4,6 +4,7 @@ import Sam from './headshots/sam_headshot.png'
 import Aidan from './headshots/aidan.png'
 import Chrisvin from './headshots/chrisvin.png'
 import Ethan from './headshots/ethan.png'
+import Theo from './headshots/theo.png'
 
 const AboutUsPage = () => {
     return (
@@ -85,8 +86,8 @@ const AboutUsPage = () => {
                                     <h2>Quoc Duong Nquyen</h2>
                                     <p class="title">Backend Designer</p>
                                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                                    <p>example@example.com</p>
-                                    <p><button class="button" onClick={() => {navigator.clipboard.writeText("example@example.com")}}>Copy Email</button></p>
+                                    <p>duongnq2k1@gmail.com</p>
+                                    <p><button class="button" onClick={() => {navigator.clipboard.writeText("duongnq2k1@gmail.com")}}>Copy Email</button></p>
                                 </div>
                             </div>
                         </div>
@@ -106,13 +107,13 @@ const AboutUsPage = () => {
 
                         <div class="column">
                             <div class="card">
-                                <img src={Blank} alt="Dev" width="100%"/>
+                                <img src={Theo} alt="Dev" width="100%"/>
                                 <div class="container">
                                     <h2>Quoc Tuan Nguyen</h2>
-                                    <p class="title">Backend Designer</p>
-                                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                                    <p>example@example.com</p>
-                                    <p><button class="button" onClick={() => {navigator.clipboard.writeText("example@example.com")}}>Copy Email</button></p>
+                                    <p class="title">Frontend Designer</p>
+                                    <p>Hey, I'm Tuan! I'm in my final year of Bachelor of Computer Science and majoring in Software Engineering. I'm interested in coding, travelling and sports. I hope I can use my knowledge to create good software applications.</p>
+                                    <p>nguyenquoctuannk@gmail.com</p>
+                                    <p><button class="button" onClick={() => {navigator.clipboard.writeText("nguyenquoctuannk@gmail.com")}}>Copy Email</button></p>
                                 </div>
                             </div>
                         </div>
