@@ -15,11 +15,13 @@ const BiasOverall = ({header, description, percent}) => {
             <div className="overallBoxHeader">
                 {header}
             </div>
+            <div className="content">
             <div className="overallDescriptionBox">
                 {description}
             </div>
             <div className="radialbar">  
                 <RadialBar percent={percent}/>
+            </div>
             </div>
         </div>
     )

@@ -9,7 +9,7 @@
     box-sizing: border-box;
 
     width: 1240px;
-    height: 300px;
+    height: auto;
 
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
@@ -33,14 +33,13 @@
 .overallDescriptionBox {
     font-family: 'ComfortaaReg';
     font-size: 15px;
+    margin-top: 30px;
     width: 60%;
-    height: 210px;
-    margin-top: 80px;
     margin-left: 70px;
     /* border: 1px solid #ff0000; /* Margin for testing/fine-tuning - Keep commented out */
 }
 
-.radialbar {
-    margin-left: 66%;
+.content {
+    display: flex;
 }
 

@@ -9,8 +9,9 @@
     box-sizing: border-box;
 
     width: 400px;
-    height: 400px;
-
+    height: 420px;
+    margin: 10px;
+    margin-left: 0;
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
     border-radius: 8px;
@@ -35,59 +36,50 @@
     font-size: 15px;
     width: 295px;
     height: 140px;
-    margin-top: 73px;
     margin-left: 50px;
     /* border: 1px solid #ff0000; /* Margin for testing/fine-tuning - Keep commented out */
 }
 
 .discreteBarContainer {
-    padding-top: 185px;
     padding-left: 25px;
+    width: 345px;
 }
 
 .discreteBarHeader {
     font-family: 'ComfortaaReg';
     font-size: 15px;
     font-weight: 500;
-    padding-left: 150px;
-}
-
-.discreteBarLabels {
-    width: 100px;
 }
 
 .discreteBarLeftLabel {
     font-family: 'ComfortaaReg';
     font-size: 14px;
-    padding-top: 32px;
 }
 
 .discreteBarRightLabel {
     font-family: 'ComfortaaReg';
     font-size: 14px;
-    padding-top: 32px;
+    float: right;
 }
 
 .confidenceBarHeader {
     font-family: 'ComfortaaReg';
     font-size: 15px;
     font-weight: 500;
-    padding-left: 120px;
 }
 
 .confidenceBarContainer {
+    width: 345px;
     padding-left: 25px;
 }
 
 .confidenceBarLeftLabel {
     font-family: 'ComfortaaReg';
     font-size: 14px;
-    padding-top: 32px;
 }
 
 .confidenceBarRightLabel {
     font-family: 'ComfortaaReg';
     font-size: 14px;
-    padding-top: 32px;
-    padding-left: 309px;
+    float: right;
 }
