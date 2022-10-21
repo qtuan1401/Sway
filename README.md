@@ -29,10 +29,14 @@ The back end section contains the Machine Learning Model, test data etc.
     ```
     cd backend/flask-server
     ```
-    ```
-    .\venv\Scripts\activate (If on Windows)
-    source venv/Scripts/activate (If on Mac)
-    ```
+        - If on Windows
+        ```
+        .\venv\Scripts\activate
+        ```
+        - If on Mac
+        ```
+        source venv/Scripts/activate
+        ```
     ```
     python3 run.py
     ```
