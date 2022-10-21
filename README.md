@@ -14,9 +14,6 @@ The back end section contains the Machine Learning Model, test data etc.
 
 1. Download Flask & NodeJS
     ```
-    pip install Flask
-    ```
-    ```
     https://nodejs.org/en/download/
     ```
 2. Clone the Repository 
@@ -29,11 +26,20 @@ The back end section contains the Machine Learning Model, test data etc.
     npm install
     ```
 4. Start Backend Server
-    ```
-    cd backend/flask-server
-    .\venv\Scripts\activate (If on Windows)
-    python3 run.py
-    ```
+
+    - If on Windows
+        ```
+        cd backend/flask-server
+        .\venv\Scripts\activate
+        python3 run.py
+        ```
+    - If on Mac
+        ```
+        cd backend/flask-server
+        source venv/Scripts/activate
+        python3 run.py
+        ```
+        
 5. Start Frontend Server
     ```
     cd frontend
