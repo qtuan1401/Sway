@@ -5,6 +5,7 @@ import React, {useState, useEffect} from 'react'
 // Font will need to be changed to comfortaa at some point for consistency
 
 const RadialBar = ({percent}) => {
+    console.log(percent);
     const [barState, setBarState] = useState({
         options: {
             chart: {
@@ -45,9 +46,10 @@ const RadialBar = ({percent}) => {
                     }
                 }
             },
-        },
-        series: [percent],
+        }
     })
+
+    console.log(barState.series);
 
     return(
         <div className='chart'>
@@ -55,7 +57,7 @@ const RadialBar = ({percent}) => {
                 <div className='mixed-chart'>
                     <Chart
                         options={barState.options}
-                        series={barState.series}
+                        series={[percent]}
                         type="radialBar"
                         width="400"
                     />

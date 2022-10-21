@@ -1,5 +1,4 @@
 .discreteBarBG {
-    position: absolute;
     width: 345px;
     height: 30px;
 
@@ -8,7 +7,6 @@
 }
 
 .discreteBar {
-    position: absolute;
     height: 30px;
     margin-top: 0px;
 
