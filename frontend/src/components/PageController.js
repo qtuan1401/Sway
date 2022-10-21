@@ -21,8 +21,10 @@ const PageController = ({activePage, activePageStateHandler}) => {
     const [politicalConfidence, setPoliticalConfidence] = useState()
     const [qualityConfidence, setQualityConfidence] = useState()
     const [overall, setOverall] = useState(0)
+    const [progress, setProgress] = useState(0);
 
     const handleSubmitButtonClickEvent = () => {
+        setProgress(1);
         fetch('https://www.nyckel.com/connect/token', {
             method: 'POST',
             headers: {

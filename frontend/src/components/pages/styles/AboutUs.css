@@ -1,16 +1,15 @@
 .aboutUsDisplay {
-    padding-left: 350px;
+  width: 1381px;
+  margin: 50px auto;
 }
 
-.aboutUsDisplayContainer {
+/* .aboutUsDisplayContainer {
   position: absolute;
   padding-top: 150px;
-}
+} */
 
 .aboutUsHeader {
-  position: absolute;
   padding-top: 75px;
-  padding-left: 540px;
   font-size: 60px;
   font-family: 'ComfortaaReg';
   font-style: normal;
@@ -83,10 +82,10 @@
 
 }
 
-.aboutUsTextDisplayContainer{
+/* .aboutUsTextDisplayContainer{
   position: absolute;
   padding-top: 150px;
-}
+} */
 
 .aboutUsTextDisplay {
   box-sizing: border-box;

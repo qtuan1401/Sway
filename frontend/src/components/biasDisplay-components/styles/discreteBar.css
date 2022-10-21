@@ -14,4 +14,15 @@
 
     background: #6DA3E3;
     border-radius: 54.5px;
+
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
