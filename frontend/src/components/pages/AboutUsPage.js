@@ -5,6 +5,7 @@ import Aidan from './headshots/aidan.png'
 import Chrisvin from './headshots/chrisvin.png'
 import Ethan from './headshots/ethan.png'
 import Theo from './headshots/theo.png'
+import Michael from './headshots/michael.png'
 
 const AboutUsPage = () => {
     return (
@@ -81,7 +82,7 @@ const AboutUsPage = () => {
 
                                 <div class="column">
                                     <div class="card">
-                                        <img src={Blank} alt="Dev" width="100%"/>
+                                        <img src={Michael} alt="Dev" width="100%"/>
                                         <div class="container">
                                             <h2>Quoc Duong Nquyen</h2>
                                             <p class="title">Backend Designer</p>
