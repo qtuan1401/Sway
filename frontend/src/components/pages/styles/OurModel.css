@@ -29,7 +29,8 @@
 }
 
 .ourModelPage {
-    padding-left: 15%;
+    /*padding-left: 200px;*/
+    padding-left: 18%;
 }
 
 .ourModelTextDisplayContainer {
@@ -40,8 +41,8 @@
 .ourModelTextDisplay {
     box-sizing: border-box;
     position: absolute;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 10px;
     text-align: center; 
     width: 1381px;

@@ -20,7 +20,8 @@
 }
 
 .ourLinksPage {
-    padding-left: 350px;
+    /*padding-left: 200px;*/
+    padding-left: 18%;
 }
 
 .ourModelHeader {
@@ -34,7 +35,7 @@
 
 .ourLinksHeader1 {
     position: absolute;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-left: 630px;
     font-size: 17px;
     font-family: 'ComfortaaReg';
@@ -43,8 +44,9 @@
 
 .ourLinksHeader2 {
     position: absolute;
-    padding-top: 300px;
-    padding-left: 630px;
+    padding-top: 350px;
+    padding-left: 590px;
+    text-align: center;
     font-size: 17px;
     font-family: 'ComfortaaReg';
     font-style: normal;
@@ -52,7 +54,7 @@
 
 .ourLinksHeader3 {
     position: absolute;
-    padding-top: 700px;
+    padding-top: 750px;
     padding-left: 630px;
     font-size: 17px;
     font-family: 'ComfortaaReg';
@@ -61,17 +63,17 @@
 
 .ourLinksTextDisplayContainer1 {
     position: absolute;
-    padding-top: 150px;
+    padding-top: 200px;
 }
 
 .ourLinksTextDisplayContainer2 {
     position: absolute;
-    padding-top: 350px;
+    padding-top: 400px;
 }
 
 .ourLinksTextDisplayContainer3 {
     position: absolute;
-    padding-top: 750px;
+    padding-top: 800px;
 }
 
 .ourLinksDisplay1 {
@@ -133,4 +135,13 @@
 
 .ourLinksLink{
     z-index: 2
+}
+
+.ourlinksHeader{
+    position: absolute;
+    padding-left: 610px;
+	padding-top: 75px;
+	font-size: 60px;
+	font-family: 'ComfortaaReg';
+	font-style: normal;
 }

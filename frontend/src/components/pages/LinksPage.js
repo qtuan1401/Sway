@@ -3,6 +3,9 @@ import './styles/Links.css'
 const LinksPage = () => {
     return (
         <div className="ourLinksPage">
+            <div class="ourlinksHeader">
+                Links
+            </div>
             <div className="ourLinksHeader1">
                 Repository Link
             </div>

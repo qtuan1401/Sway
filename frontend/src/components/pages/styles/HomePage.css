@@ -8,12 +8,14 @@
 .homePage {
     position: absolute;
     padding-left: 18%;
-    padding-top: 10%;
+    padding-right: 18%;
+    padding-top:5%;
 }
 
 .homePageHeader {
+    padding-top: 100px;
     padding-left: 400px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
@@ -29,4 +31,10 @@
 .homepageSubmitButton {
     padding-left: 1063px;
     padding-top: 20px;
+}
+
+.homePageTitle {
+    font-size: 60px;
+    font-family: 'ComfortaaReg';
+    font-style: normal;
 }

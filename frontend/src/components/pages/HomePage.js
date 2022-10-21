@@ -32,6 +32,7 @@ const HomePage = ({submitHandler, inputStateChangeHandler, parentUrlBoxStateSett
 
     return (
         <div className="homePage">
+            <div className='homePageTitle'> Welcome to Sway Bias Detection Service </div>
             <div className="homePageHeader">
                 Enter text or a URL into the boxes below.
             </div>
