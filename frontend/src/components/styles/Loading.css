@@ -1,0 +1,22 @@
+.loading-overlay {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.loading-container {
+    width: 50px;
+    height: 50px;
+    margin: 200px auto;
+    z-index: 3;
+
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

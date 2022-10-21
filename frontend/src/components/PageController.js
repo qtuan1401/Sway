@@ -5,6 +5,7 @@ import ResultsPage from './pages/ResultsPage'
 import OurModelPage from './pages/OurModelPage'
 import AboutUsPage from './pages/AboutUsPage'
 import LinksPage from './pages/LinksPage'
+import Loading from './Loading'
 
 // Prop Descriptions:
 // activePage - This prop contains the active page as determined by the navbar component
@@ -24,6 +25,7 @@ const PageController = ({activePage, activePageStateHandler}) => {
     const [progress, setProgress] = useState(0);
 
     const handleSubmitButtonClickEvent = async () => {
+        setProgress(1);
         await fetch('https://www.nyckel.com/connect/token', {
             method: 'POST',
             headers: {
@@ -51,7 +53,7 @@ const PageController = ({activePage, activePageStateHandler}) => {
             } else if(inputActiveState == 2) {
                 beginCascadeToResults(textBoxText, token.access_token)
             }
-        });
+        })
     }
 
     const beginCascadeToResults = async (str, token) => {
@@ -129,48 +131,14 @@ const PageController = ({activePage, activePageStateHandler}) => {
                     // calculateOverall()
                 })
             })
-        });
-    }
-
-    const calculateOverall = () => {
-        var tempPoliticalVal
-        var tempGenderVal
-        var tempQualityVal
-        var temp
-
-        // The purpose of the calculation below is to ensure that any swing towards either side of the bar
-        // will negatively influence the overall.
-        console.log(politicalConfidence);
-        if(politicalData == 1 || politicalData == -1) {
-            tempPoliticalVal = 50 + (50 * politicalConfidence)
-        } else if(politicalData == 0) {
-            tempPoliticalVal = 50 - (50 * politicalConfidence)
-        }
-
-        // The purpose of the calculation below is to ensure that any swing towards either side of the bar
-        // will negatively influence the overall.
-        tempGenderVal = 100 * genderConfidence
-        
-        // The purpose of the calculation below for effective data reliability/quality is to
-        // use this value as a weight while calculating the overall.
-        if(qualityData == 1) {
-            tempQualityVal = 50 + (50 * qualityConfidence)
-        } else if(qualityData == 0) {
-            tempQualityVal = 50
-        } else if(qualityData == -1) {
-            tempQualityVal = 50 - (50 * qualityConfidence)
-        }
-        temp = ((tempPoliticalVal + tempGenderVal) * (tempQualityVal / 100)) / 200
-        console.log("TEMP POL: " + tempPoliticalVal) // Temporary testing
-        console.log("TEMP QUAL: " + tempQualityVal) // Temporary testing
-        console.log("TEMP GEN: " + tempGenderVal) // Temporary testing
-        console.log(Math.round(temp*100)) // Temporary testing
-        setOverall(Math.round(temp*100))
+        })
+        setProgress(0);
     }
 
     if(activePage == 0) {
         return(
             <div className="homePageContainer">
+                {progress === 1 && <Loading />}
                 <HomePage 
                     submitHandler={handleSubmitButtonClickEvent}
                     inputStateChangeHandler={setInputActiveState}
