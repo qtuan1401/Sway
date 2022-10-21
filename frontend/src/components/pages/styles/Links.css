@@ -20,63 +20,63 @@
 }
 
 .ourLinksPage {
-    width: 1381px;
-    margin: auto;
+    padding-left: 350px;
 }
 
 .ourModelHeader {
-    /* position: absolute;
-    padding-top: 75px; */
+    position: absolute;
+    padding-top: 75px;
+    padding-left: 510px;
     font-size: 60px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
 
 .ourLinksHeader1 {
-    /* position: absolute;
-    padding-top: 100px; */
+    position: absolute;
+    padding-top: 100px;
+    padding-left: 630px;
     font-size: 17px;
-    margin-top: 20px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
 
 .ourLinksHeader2 {
-    /* position: absolute;
-    padding-top: 300px; */
-    margin-top: 20px;
+    position: absolute;
+    padding-top: 300px;
+    padding-left: 630px;
     font-size: 17px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
 
 .ourLinksHeader3 {
-    /* position: absolute;
+    position: absolute;
     padding-top: 700px;
-    padding-left: 630px; */
-    margin-top: 20px;
+    padding-left: 630px;
     font-size: 17px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
 
 .ourLinksTextDisplayContainer1 {
-    /* position: absolute;
-    padding-top: 150px; */
+    position: absolute;
+    padding-top: 150px;
 }
 
 .ourLinksTextDisplayContainer2 {
-    /* position: absolute;
-    padding-top: 350px; */
+    position: absolute;
+    padding-top: 350px;
 }
 
 .ourLinksTextDisplayContainer3 {
-    /* position: absolute;
-    padding-top: 750px; */
+    position: absolute;
+    padding-top: 750px;
 }
 
 .ourLinksDisplay1 {
     box-sizing: border-box;
+    position: absolute;
     padding-left: 10px;
     padding-top: 10px;
     text-align: center; 
@@ -95,6 +95,7 @@
 
 .ourLinksDisplay2 {
     box-sizing: border-box;
+    position: absolute;
     padding-left: 10px;
     padding-top: 10px;
     text-align: center; 
@@ -113,6 +114,7 @@
 
 .ourLinksDisplay3 {
     box-sizing: border-box;
+    position: absolute;
     padding-left: 10px;
     padding-top: 10px;
     text-align: center; 

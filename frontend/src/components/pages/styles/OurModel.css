@@ -20,6 +20,7 @@
 }
 
 .ourModelHeader {
+    position: absolute;
     padding-top: 75px;
     padding-left: 510px;
     font-size: 60px;
@@ -28,16 +29,17 @@
 }
 
 .ourModelPage {
-    width: 1381px;
-    margin: 50px auto;
+    padding-left: 15%;
 }
 
 .ourModelTextDisplayContainer {
+    position: absolute;
     padding-top: 150px;
 }
 
 .ourModelTextDisplay {
     box-sizing: border-box;
+    position: absolute;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
@@ -72,6 +74,7 @@
 div.ourModelLinkDisplay {
     box-sizing: border-box;
     
+    position: absolute;
     width: 1381px;
     height: 217px;
 

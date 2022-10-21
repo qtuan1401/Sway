@@ -6,29 +6,27 @@
 }
 
 .resultsPage {
-    width: 1000px;
-    height: 1000px;
-    margin: 50px auto;
+    padding-left: 350px;
+    padding-top: 100px;
+    position: absolute;
 }
 
 .resultsPageHeader {
+    padding-left: 550px;
     padding-bottom: 25px;
     font-family: 'ComfortaaReg';
     font-style: normal;
     font-size: 17px;
 }
-.resultsDisplayStack {
-    display: flex;
-}
 
-/* .resultTwo {
+.resultTwo {
     padding-left: 420px;
 }
 
 .resultThree {
     padding-left: 840px;
-} */
-/* 
+}
+
 .overallResultPanel {
     padding-top: 420px;
-} */
+}

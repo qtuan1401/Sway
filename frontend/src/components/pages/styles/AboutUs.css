@@ -1,111 +1,111 @@
 .aboutUsDisplay {
-  width: 1381px;
-  margin: 50px auto;
+	padding-left: 350px;
 }
 
-/* .aboutUsDisplayContainer {
-  position: absolute;
-  padding-top: 150px;
-} */
+.aboutUsDisplayContainer {
+	position: absolute;
+	padding-top: 150px;
+}
 
 .aboutUsHeader {
-  padding-top: 75px;
-  font-size: 60px;
-  font-family: 'ComfortaaReg';
-  font-style: normal;
+	position: absolute;
+	padding-top: 75px;
+	padding-left: 540px;
+	font-size: 60px;
+	font-family: 'ComfortaaReg';
+	font-style: normal;
 }
 
 
 /* Three columns side by side */
 .column {
-    float: left;
-    width: 30%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-    height:700px;
-    font-size: 14px;
-    font-family: 'ComfortaaReg';
-    font-style: normal;
-  }
-  
-  /* Display the columns below each other instead of side by side on small screens */
-  @media screen and (max-width: 450px) {
-    .column {
-      width: 100%;
-      display: block;
-      height: 700px;
-    }
-  }
-  
-  /* Add some shadows to create a card effect */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Some left and right padding inside the container */
-  .container {
-    padding: 0 16px;
-  }
-  
-  /* Clear floats */
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display:table;
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #A1C5EF;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .button:hover {
-    background-color: #555;
-  }
-
-.headers{
-  text-align: center;
-  font-size: 17px;
-  font-family: 'ComfortaaReg';
-  font-style: normal;
-
+	float: left;
+	width: 30%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+	height:700px;
+	font-size: 14px;
+	font-family: 'ComfortaaReg';
+	font-style: normal;
 }
 
-/* .aboutUsTextDisplayContainer{
-  position: absolute;
-  padding-top: 150px;
-} */
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 450px) {
+	.column {
+		width: 100%;
+		display: block;
+		height: 700px;
+	}
+}
+
+/* Add some shadows to create a card effect */
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+	padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+	content: "";
+	clear: both;
+	display:table;
+}
+
+.title {
+	color: grey;
+}
+
+.button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 8px;
+	color: white;
+	background-color: #A1C5EF;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+}
+
+.button:hover {
+	background-color: #555;
+}
+
+.headers{
+	text-align: center;
+	font-size: 17px;
+	font-family: 'ComfortaaReg';
+	font-style: normal;
+}
+
+.aboutUsTextDisplayContainer{
+	position: absolute;
+	padding-top: 150px;
+}
 
 .aboutUsTextDisplay {
-  box-sizing: border-box;
-  position: absolute;
-  width: 1381px;
-  height: 800px;
-  background: #FCFCFC;
-  border: 1px solid #D2D2D2;
-  border-radius: 8px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  font-size: 17px;
-  font-family: 'ComfortaaReg';
-  font-style: normal;
+	box-sizing: border-box;
+	position: absolute;
+	width: 1381px;
+	height: 500px;
+	background: #FCFCFC;
+	border: 1px solid #D2D2D2;
+	border-radius: 8px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	font-size: 17px;
+	font-family: 'ComfortaaReg';
+	font-style: normal;
 }
 
 
 .aboutUsBodyTitle {
-  text-align: center;
-  font-size: 40px;
-  font-family: 'ComfortaaReg';
-  font-style: normal;
+	text-align: center;
+	font-size: 40px;
+	font-family: 'ComfortaaReg';
+	font-style: normal;
 }
