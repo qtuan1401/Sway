@@ -35,7 +35,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
         })
         .then(response => response.json())
         .then(token => {
-            console.log(token.access_token)
             if(inputActiveState == 1) {
                 fetch('http://localhost:5000/url', {
                     method: 'POST',
@@ -58,7 +57,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
 
     const beginCascadeToResults = async (str, token) => {
         // Query code here for political bias
-        console.log("POLITICAL QUERY")
         await fetch('https://www.nyckel.com/v1/functions/fdcyy6xp6ito24tn/invoke', {
             method: 'POST',
             headers: {
@@ -71,7 +69,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             if(data.labelName == "Left") {
                 setPoliticalData(-1)
             } else if(data.labelName == "Central") {
@@ -82,7 +79,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
             setPoliticalConfidence(data.confidence)
         }).then((val) => {
             // Query code here for data quality/reliability
-            console.log("QUALITY QUERY")
             fetch('https://www.nyckel.com/v1/functions/mtti3fgv03vtl07p/invoke', {
                 method: 'POST',
                 headers: {
@@ -95,7 +91,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 if(data.labelName == "Low") {
                     setQualityData(-1)
                 } else if(data.labelName == "Medium") {
@@ -106,7 +101,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
                 setQualityConfidence(data.confidence)
             }).then((val) => {
                 // Query code here for gender bias
-                console.log("GENDER QUERY")
                 fetch('https://www.nyckel.com/v1/functions/ky72dde3ymqe0s4w/invoke', {
                     method: 'POST',
                     headers: {
@@ -119,7 +113,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     if(data.labelName == "Male") {
                         setGenderData(-1)
                     } else if(data.labelName == "Female") {
@@ -148,9 +141,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
             </div>
         )
     } else if(activePage == 1) {
-        console.log("POL " + politicalData)
-        console.log("GEN " + genderData)
-        console.log("QUAL " + qualityData)
         return(
             <div className="resultsPageContainer">
                 <ResultsPage 

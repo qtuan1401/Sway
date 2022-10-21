@@ -5,7 +5,6 @@ import React, {useState, useEffect} from 'react'
 // Font will need to be changed to comfortaa at some point for consistency
 
 const RadialBar = ({percent}) => {
-    console.log(percent);
     const [barState, setBarState] = useState({
         options: {
             chart: {

@@ -9,7 +9,6 @@ import RadialBar from './biasOverall-components/radialbar.js'
 
 const BiasOverall = ({header, description, percent}) => {
     const [percentState, setPercentState] = useState(percent)
-    console.log(percent);
     return (
         <div className="BiasOverallContainer">
             <div className="overallBoxHeader">

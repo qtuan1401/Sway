@@ -26,7 +26,6 @@ const ResultsPage = ({one, two, three, overall}) => {
         const qualityData = three.value;
         // The purpose of the calculation below is to ensure that any swing towards either side of the bar
         // will negatively influence the overall.
-        console.log(politicalConfidence);
         if(politicalData == 1 || politicalData == -1) {
             tempPoliticalVal = 50 + (50 * politicalConfidence)
         } else if(politicalData == 0) {
@@ -47,14 +46,8 @@ const ResultsPage = ({one, two, three, overall}) => {
             tempQualityVal = 50 - (50 * qualityConfidence)
         }
         temp = ((tempPoliticalVal + tempGenderVal) * (tempQualityVal / 100)) / 200
-        console.log("TEMP POL: " + tempPoliticalVal) // Temporary testing
-        console.log("TEMP QUAL: " + tempQualityVal) // Temporary testing
-        console.log("TEMP GEN: " + tempGenderVal) // Temporary testing
-        console.log(Math.round(temp*100)) // Temporary testing
         setOverallPercent(Math.round(temp*100))
     }, [one, two, three])
-
-    console.log(overallPercent);
 
     return (
         <div className="resultsPage">
