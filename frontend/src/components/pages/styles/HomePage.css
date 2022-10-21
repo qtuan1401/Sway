@@ -6,27 +6,32 @@
 }
 
 .homePage {
-    position: absolute;
-    padding-left: 350px;
-    padding-top: 130px;
+    width: 1000px;
+    min-width: 800px;
+    margin: 50px auto;
 }
 
 .homePageHeader {
-    padding-left: 400px;
-    padding-bottom: 20px;
+    margin-left: 400px;
+    margin-bottom: 20px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
 
 .orLabel {
-    padding-left: 558px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-left: 558px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
 
 .homepageSubmitButton {
-    padding-left: 1063px;
-    padding-top: 20px;
+    margin-left: 1063px;
+    margin-top: 20px;
+}
+
+.textInputBox {
+    width: auto;
+    margin: auto;
 }

@@ -1,5 +1,4 @@
 .discreteBarBG {
-    position: absolute;
     width: 345px;
     height: 30px;
 
@@ -8,10 +7,20 @@
 }
 
 .discreteBar {
-    position: absolute;
     height: 30px;
     margin-top: 0px;
 
     background: #6DA3E3;
     border-radius: 54.5px;
+
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

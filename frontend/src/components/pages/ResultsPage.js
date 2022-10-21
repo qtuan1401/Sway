@@ -8,12 +8,53 @@ const ResultsPage = ({one, two, three, overall}) => {
     const [politicalCard, setPoliticalCard] = useState(one)
     const [genderCard, setGenderCard] = useState(two)
     const [qualityCard, setQualityCard] = useState(three)
+    const [overallPercent, setOverallPercent] = useState(0);
 
     useEffect(() => {
         setPoliticalCard(one)
         setGenderCard(two)
         setQualityCard(three)
+
+        let tempPoliticalVal;
+        let tempGenderVal;
+        let tempQualityVal;
+        let temp;
+        const politicalConfidence = one.confidence;
+        const genderConfidence = two.confidence;
+        const qualityConfidence = three.confidence;
+        const politicalData = one.value;
+        const qualityData = three.value;
+        // The purpose of the calculation below is to ensure that any swing towards either side of the bar
+        // will negatively influence the overall.
+        console.log(politicalConfidence);
+        if(politicalData == 1 || politicalData == -1) {
+            tempPoliticalVal = 50 + (50 * politicalConfidence)
+        } else if(politicalData == 0) {
+            tempPoliticalVal = 50 - (50 * politicalConfidence)
+        }
+
+        // The purpose of the calculation below is to ensure that any swing towards either side of the bar
+        // will negatively influence the overall.
+        tempGenderVal = 100 * genderConfidence
+        
+        // The purpose of the calculation below for effective data reliability/quality is to
+        // use this value as a weight while calculating the overall.
+        if(qualityData == 1) {
+            tempQualityVal = 50 + (50 * qualityConfidence)
+        } else if(qualityData == 0) {
+            tempQualityVal = 50
+        } else if(qualityData == -1) {
+            tempQualityVal = 50 - (50 * qualityConfidence)
+        }
+        temp = ((tempPoliticalVal + tempGenderVal) * (tempQualityVal / 100)) / 200
+        console.log("TEMP POL: " + tempPoliticalVal) // Temporary testing
+        console.log("TEMP QUAL: " + tempQualityVal) // Temporary testing
+        console.log("TEMP GEN: " + tempGenderVal) // Temporary testing
+        console.log(Math.round(temp*100)) // Temporary testing
+        setOverallPercent(Math.round(temp*100))
     }, [one, two, three])
+
+    console.log(overallPercent);
 
     return (
         <div className="resultsPage">
@@ -54,7 +95,7 @@ const ResultsPage = ({one, two, three, overall}) => {
                 </div>
             </div>
             <div className="overallResultPanel">
-                <BiasOverall header={overall.header} description={overall.description} percent={overall.percent}/>
+                <BiasOverall header={overall.header} description={overall.description} percent={overallPercent}/>
             </div>
         </div>
     )

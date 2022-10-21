@@ -59,7 +59,7 @@ const Navbar = () => {
     }
 
     return (
-        <>
+        <div className='fullPageContainer'>
             <div className="navbarContainer">
                 <div className="buttonOne">
                     <Button active={B1active} onClick={handleClickB1} logo={logoHome} logoXOffset={10} logoYOffset={10}/>
@@ -77,7 +77,7 @@ const Navbar = () => {
             <div className="pageContainer">
                 <PageController activePage={activePage} activePageStateHandler={setActivePage}/>
             </div>
-        </>
+        </div>
     )
 }
 

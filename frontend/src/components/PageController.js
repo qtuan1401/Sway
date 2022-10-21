@@ -17,13 +17,14 @@ const PageController = ({activePage, activePageStateHandler}) => {
     const [politicalData, setPoliticalData] = useState()
     const [qualityData, setQualityData] = useState()
     const [genderData, setGenderData] = useState()
-    const [genderConfidence, setGenderConfidence] = useState()
-    const [politicalConfidence, setPoliticalConfidence] = useState()
-    const [qualityConfidence, setQualityConfidence] = useState()
+    const [genderConfidence, setGenderConfidence] = useState(0)
+    const [politicalConfidence, setPoliticalConfidence] = useState(0)
+    const [qualityConfidence, setQualityConfidence] = useState(0)
     const [overall, setOverall] = useState(0)
+    const [progress, setProgress] = useState(0);
 
-    const handleSubmitButtonClickEvent = () => {
-        fetch('https://www.nyckel.com/connect/token', {
+    const handleSubmitButtonClickEvent = async () => {
+        await fetch('https://www.nyckel.com/connect/token', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -53,10 +54,10 @@ const PageController = ({activePage, activePageStateHandler}) => {
         });
     }
 
-    const beginCascadeToResults = (str, token) => {
+    const beginCascadeToResults = async (str, token) => {
         // Query code here for political bias
         console.log("POLITICAL QUERY")
-        fetch('https://www.nyckel.com/v1/functions/fdcyy6xp6ito24tn/invoke', {
+        await fetch('https://www.nyckel.com/v1/functions/fdcyy6xp6ito24tn/invoke', {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + token,
@@ -125,7 +126,7 @@ const PageController = ({activePage, activePageStateHandler}) => {
                     setGenderConfidence(data.confidence)
                 }).then((final) => {
                     activePageStateHandler(1)
-                    calculateOverall()
+                    // calculateOverall()
                 })
             })
         });
@@ -139,6 +140,7 @@ const PageController = ({activePage, activePageStateHandler}) => {
 
         // The purpose of the calculation below is to ensure that any swing towards either side of the bar
         // will negatively influence the overall.
+        console.log(politicalConfidence);
         if(politicalData == 1 || politicalData == -1) {
             tempPoliticalVal = 50 + (50 * politicalConfidence)
         } else if(politicalData == 0) {
@@ -212,7 +214,6 @@ const PageController = ({activePage, activePageStateHandler}) => {
                     overall={{
                         header: "Overall",
                         description: "The overall bias of the text is determined as a function of the political/gender bias, data reliability and the confidence that the neural network has in the evaluation returned. The purpose of this value is to provide a general idea of the degree to which a text seems to be addressing a marginal viewpoint. It should be noted that this value does not in any way, indicate malicious intent on behalf of the author, as entirely factual journalism could still be detected to be addressing a specific audience.",
-                        percent: overall
                     }}
                 />
             </div>
