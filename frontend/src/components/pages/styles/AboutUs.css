@@ -45,6 +45,34 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.cardSam {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardEthan {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardMicheal {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardAidan {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardTheo {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.samEmail {
+	padding-top: 15px;
+}
+
+.theoEmail {
+	padding-top: 15px;
+}
+
 /* Some left and right padding inside the container */
 .container {
 	padding: 0 16px;
@@ -96,7 +124,7 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	width: 1381px;
-	height: 800px;
+	height: 750px;
 	background: #FCFCFC;
 	border: 1px solid #D2D2D2;
 	border-radius: 8px;
@@ -113,4 +141,8 @@
 	font-size: 40px;
 	font-family: 'ComfortaaReg';
 	font-style: normal;
+}
+
+.ourTeamContainer {
+	padding-left: 70px;
 }

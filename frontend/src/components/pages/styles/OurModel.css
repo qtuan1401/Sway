@@ -30,7 +30,7 @@
 
 .ourModelPage {
     /*padding-left: 200px;*/
-    padding-left: 18%;
+    padding-left: 16%;
 }
 
 .ourModelTextDisplayContainer {
@@ -46,7 +46,7 @@
     padding-top: 10px;
     text-align: center; 
     width: 1381px;
-    height: 800px;
+    height: 750px;
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
     border-radius: 8px;
@@ -67,7 +67,7 @@
 
 .ourModelBodyTitle {
     text-align: center;
-    font-size: 40px;
+    font-size: 200%;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }

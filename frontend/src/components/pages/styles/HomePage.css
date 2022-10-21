@@ -7,7 +7,7 @@
 
 .homePage {
     position: absolute;
-    padding-left: 18%;
+    padding-left: 333px;
     padding-right: 18%;
     padding-top:5%;
 }
@@ -34,7 +34,8 @@
 }
 
 .homePageTitle {
-    font-size: 60px;
+    font-size: 250%;
+    text-align: center;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
