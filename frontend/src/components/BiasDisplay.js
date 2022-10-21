@@ -33,27 +33,35 @@ const BiasDisplay = ({header, description, leftLabel, rightLabel, value, confide
             <div className="results">
                 <div className="discreteBarContainer">
                     <p className="discreteBarHeader">Result</p>
-                    <DiscreteBar value={discreteBarValue} confidence={barConfidence}/>
-                    <div>
-                        <span className='discreteBarLeftLabel'>
-                            {leftLabel}
-                        </span>
-                        <span className='discreteBarRightLabel'>
-                            {rightLabel}
-                        </span>
-                    </div>
+                    <table className="discreteBarTable">
+                        <tr>
+                            <DiscreteBar value={discreteBarValue} confidence={barConfidence}/>
+                        </tr>
+                        <tr className="discreteBarLabels">
+                            <td className='discreteBarLeftLabel'>
+                                {leftLabel}
+                            </td>
+                            <td className='discreteBarRightLabel' style={{paddingLeft: `${274 - rightLabelOffset}px`}}>
+                                {rightLabel}
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div className="confidenceBarContainer">
                     <p className="confidenceBarHeader">Confidence (%)</p>
-                    <PresenceBar presence={(confidence*100)+"%"}/>
-                    <div className="confidenceBarLabels">
-                        <span className='confidenceBarLeftLabel'>
-                            0
-                        </span>
-                        <span className='confidenceBarRightLabel'>
-                            100
-                        </span>
-                    </div>
+                    <table className="confidenceBarTable">
+                        <tr>
+                            <PresenceBar presence={(confidence*100)+"%"}/>
+                        </tr>
+                        <tr className="confidenceBarLabels">
+                            <td className='confidenceBarLeftLabel'>
+                                0
+                            </td>
+                            <td className='confidenceBarRightLabel'>
+                                100
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
