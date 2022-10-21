@@ -26,20 +26,20 @@ The back end section contains the Machine Learning Model, test data etc.
     npm install
     ```
 4. Start Backend Server
-    ```
-    cd backend/flask-server
-    ```
-        - If on Windows
+
+    - If on Windows
         ```
+        cd backend/flask-server
         .\venv\Scripts\activate
+        python3 run.py
         ```
-        - If on Mac
+    - If on Mac
         ```
+        cd backend/flask-server
         source venv/Scripts/activate
+        python3 run.py
         ```
-    ```
-    python3 run.py
-    ```
+        
 5. Start Frontend Server
     ```
     cd frontend
