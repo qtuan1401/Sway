@@ -5,6 +5,10 @@ On Windows:
     ```
     .\venv\Scripts\activate
     ```
+On Mac
+    ```
+    source venv/Scripts/activate
+    ```
 2. To run the server
     ```
     python3 run.py
