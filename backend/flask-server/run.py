@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import json
 
 app = Flask(__name__)
 cors = CORS(app)
