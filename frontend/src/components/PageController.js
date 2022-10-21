@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import { Outlet, Link } from "react-router-dom";
 import HomePage from './pages/HomePage'
 import ResultsPage from './pages/ResultsPage'
 import OurModelPage from './pages/OurModelPage'
