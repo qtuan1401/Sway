@@ -31,7 +31,10 @@ const PageController = ({activePage, activePageStateHandler}) => {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: 'client_id=nyp7aqerzzvlegnngu937tbpb0tcmrij&client_secret=zznj7bxwmelf3zdbmre1esxtmzvax157hblet3g4wcht8wmcmhqudg572tw7fmyk&grant_type=client_credentials'
+            //SECOND ACCOUNT
+            body: 'client_id=4idw3amkaejxdukgp39qt9gqmb3a30vr&client_secret=f2eoaz7wpo691lkp9qfpvjbu1n9r6cg9isiagw5qwd0427o0qe0dl6vvqjmnpfpd&grant_type=client_credentials'
+            //MARK SUBMITTED ACCOUNT
+            //body: 'client_id=nyp7aqerzzvlegnngu937tbpb0tcmrij&client_secret=zznj7bxwmelf3zdbmre1esxtmzvax157hblet3g4wcht8wmcmhqudg572tw7fmyk&grant_type=client_credentials'
         })
         .then(response => response.json())
         .then(token => {
@@ -57,7 +60,11 @@ const PageController = ({activePage, activePageStateHandler}) => {
 
     const beginCascadeToResults = async (str, token) => {
         // Query code here for political bias
-        await fetch('https://www.nyckel.com/v1/functions/fdcyy6xp6ito24tn/invoke', {
+        //SECOND ACCOUNT
+        await fetch('https://www.nyckel.com/v1/functions/nes1msf05ge8tex5/invoke', {
+
+        //MARK SUBMITTED ACCOUNT
+        //await fetch('https://www.nyckel.com/v1/functions/fdcyy6xp6ito24tn/invoke', {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + token,
@@ -79,7 +86,10 @@ const PageController = ({activePage, activePageStateHandler}) => {
             setPoliticalConfidence(data.confidence)
         }).then((val) => {
             // Query code here for data quality/reliability
-            fetch('https://www.nyckel.com/v1/functions/mtti3fgv03vtl07p/invoke', {
+            //SECOND ACCOUNT
+            fetch('https://www.nyckel.com/v1/functions/5rpyd1p6tf8mzz30/invoke', {
+            //MARK SUBMITTED ACCOUNT
+            //fetch('https://www.nyckel.com/v1/functions/mtti3fgv03vtl07p/invoke', {
                 method: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -101,7 +111,10 @@ const PageController = ({activePage, activePageStateHandler}) => {
                 setQualityConfidence(data.confidence)
             }).then((val) => {
                 // Query code here for gender bias
-                fetch('https://www.nyckel.com/v1/functions/ky72dde3ymqe0s4w/invoke', {
+                //SECOND ACCOUNT
+                fetch('https://www.nyckel.com/v1/functions/0rwy1kx6nkz59op0/invoke', {
+                //MARK SUBMITTED ACCOUNT
+                //fetch('https://www.nyckel.com/v1/functions/ky72dde3ymqe0s4w/invoke', {
                     method: 'POST',
                     headers: {
                         'Authorization': 'Bearer ' + token,
