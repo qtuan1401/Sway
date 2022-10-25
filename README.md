@@ -21,17 +21,13 @@ The back end section contains the Machine Learning Model, test data etc.
     ```
     git clone https://github.com/qtuan1401/Sway.git
     ```
-3. Install Frontend requirements
+3. Install Frontend requirements & Start Frontend Server
     ```
     cd frontend
     npm install
-    ```
-4. Start Frontend Server
-    ```
-    cd frontend
     npm start
     ```
-5. Start Backend Server
+4. Start Backend Server
 
     - If on Windows
         ```
