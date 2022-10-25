@@ -12,9 +12,10 @@ The back end section contains the Machine Learning Model, test data etc.
 
 ## To Run Server
 
-1. Download Flask & NodeJS
+1. Download Python3 & NodeJS
     ```
     https://nodejs.org/en/download/
+    https://www.python.org/downloads/
     ```
 2. Clone the Repository 
     ```
