@@ -26,7 +26,12 @@ The back end section contains the Machine Learning Model, test data etc.
     cd frontend
     npm install
     ```
-4. Start Backend Server
+4. Start Frontend Server
+    ```
+    cd frontend
+    npm start
+    ```
+5. Start Backend Server
 
     - If on Windows
         ```
@@ -41,8 +46,5 @@ The back end section contains the Machine Learning Model, test data etc.
         python3 run.py
         ```
         
-5. Start Frontend Server
-    ```
-    cd frontend
-    npm start
-    ```
+
+    
