@@ -12,18 +12,20 @@ The back end section contains the Machine Learning Model, test data etc.
 
 ## To Run Server
 
-1. Download Flask & NodeJS
+1. Download Python3 & NodeJS
     ```
     https://nodejs.org/en/download/
+    https://www.python.org/downloads/
     ```
 2. Clone the Repository 
     ```
     git clone https://github.com/qtuan1401/Sway.git
     ```
-3. Install Frontend requirements
+3. Install Frontend requirements & start Frontend Server
     ```
     cd frontend
     npm install
+    npm start
     ```
 4. Start Backend Server
 
@@ -40,8 +42,5 @@ The back end section contains the Machine Learning Model, test data etc.
         python3 run.py
         ```
         
-5. Start Frontend Server
-    ```
-    cd frontend
-    npm start
-    ```
+
+    
