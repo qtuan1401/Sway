@@ -1,10 +1,14 @@
 import './styles/ResultsPage.css'
 import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 
 import BiasDisplay from '../BiasDisplay'
 import BiasOverall from '../BiasOverall'
 
-const ResultsPage = ({one, two, three, overall}) => {
+const ResultsPage = () => {
+    const location = useLocation();
+    const { one, two, three, overall } = location.state;
+
     const [politicalCard, setPoliticalCard] = useState(one)
     const [genderCard, setGenderCard] = useState(two)
     const [qualityCard, setQualityCard] = useState(three)

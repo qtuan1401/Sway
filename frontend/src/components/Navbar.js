@@ -7,6 +7,10 @@ import logoHome from './navbar-components/button-icons/home.png'
 import logoMoreInfo from './navbar-components/button-icons/moreinfo.png'
 import logoOurModel from './navbar-components/button-icons/ourmodel.png'
 import logoShare from './navbar-components/button-icons/share.png'
+import Loading from './Loading'
+
+import { Link, useLocation  } from "react-router-dom";
+import * as ROUTES from "../routes/paths";
 
 // Active Page Index
 // 0 - Home (Default)
@@ -20,63 +24,28 @@ import logoShare from './navbar-components/button-icons/share.png'
 // Not the most elegant solution for page changes but it'll do.
 
 const Navbar = () => {
-    const [B1active, setB1Active] = useState(true);
-    const [B2active, setB2Active] = useState(false);
-    const [B3active, setB3Active] = useState(false);
-    const [B4active, setB4Active] = useState(false);
-    const [activePage, setActivePage] = useState(0);
-
-    const handleClickB1 = () => {
-        setB1Active(true);
-        setB2Active(false);
-        setB3Active(false);
-        setB4Active(false);
-        setActivePage(0);
-    }
-
-    const handleClickB2 = () => {
-        setB1Active(false);
-        setB2Active(true);
-        setB3Active(false);
-        setB4Active(false);
-        setActivePage(2);
-    }
-
-    const handleClickB3 = () => {
-        setB1Active(false);
-        setB2Active(false);
-        setB3Active(true);
-        setB4Active(false);
-        setActivePage(3);
-    }
-
-    const handleClickB4 = () => {
-        setB1Active(false);
-        setB2Active(false);
-        setB3Active(false);
-        setB4Active(true);
-        setActivePage(4);
-    }
-
+    const location = useLocation()
+    const pathname = location.pathname;
+    // console.log(pathname);
     return (
         <div className='fullPageContainer'>
             <div className="navbarContainer">
-                <div className="buttonOne">
-                    <Button active={B1active} onClick={handleClickB1} logo={logoHome} logoXOffset={10} logoYOffset={10}/>
-                </div>
-                <div className="buttonTwo">
-                    <Button active={B2active} onClick={handleClickB2} logo={logoOurModel} logoXOffset={10} logoYOffset={10}/>
-                </div>
-                <div className="buttonThree">
-                    <Button active={B3active} onClick={handleClickB3} logo={logoMoreInfo} logoXOffset={12} logoYOffset={9}/>
-                </div>
-                <div className="buttonFour">
-                    <Button active={B4active} onClick={handleClickB4} logo={logoShare} logoXOffset={16} logoYOffset={10}/>
-                </div>
+                <Link className="buttonOne" to={ROUTES.HOMEPAGE}>
+                    <Button active={pathname === ROUTES.HOMEPAGE} logo={logoHome} logoXOffset={10} logoYOffset={10}/>
+                </Link>
+                <Link className="buttonTwo" to={ROUTES.MODEL_PAGE}>
+                    <Button active={pathname === ROUTES.MODEL_PAGE} logo={logoOurModel} logoXOffset={10} logoYOffset={10}/>
+                </Link>
+                <Link className="buttonThree" to={ROUTES.ABOUT_US_PAGE}>
+                    <Button active={pathname === ROUTES.ABOUT_US_PAGE} logo={logoMoreInfo} logoXOffset={12} logoYOffset={9}/>
+                </Link>
+                <Link className="buttonFour" to={ROUTES.LINKS_PAGE}>
+                    <Button active={pathname === ROUTES.LINKS_PAGE} logo={logoShare} logoXOffset={16} logoYOffset={10}/>
+                </Link>
             </div>
-            <div className="pageContainer">
-                <PageController activePage={activePage} activePageStateHandler={setActivePage}/>
-            </div>
+            {/* <div className="pageContainer">
+                <PageController />
+            </div> */}
         </div>
     )
 }
