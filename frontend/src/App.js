@@ -1,16 +1,17 @@
-import Navbar from "./Navbar";
-import Logo from "./img/Logo.png";
-import Filter from "./container/Filter";
-import "./App.css";
+import Navbar from './components/Navbar'
+import LogoDisplay from './components/LogoDisplay'
+import Logo from './logos/sway_logo_transparent.png'
+import { BrowserRouter } from 'react-router-dom'
+import { renderRoutes } from './routes';
 
 function App() {
-  return (
-    <div>
-      <img src={Logo} alt="logo" className="logo"/>
-      <Navbar />
-      <Filter />
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<LogoDisplay img_src={Logo}/>
+			<Navbar />
+			{renderRoutes()}
+		</BrowserRouter>
+	);
 }
 
 export default App;

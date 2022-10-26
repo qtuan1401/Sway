@@ -1,0 +1,35 @@
+.navbarContainer {
+    position: fixed;
+    margin-left: 30px;
+    top: 36.1%;
+    width: 99px;
+    height: 299px;
+
+    background: #6DA3E3;
+    border-radius: 54px;
+    z-index: 1;
+}
+
+.buttonOne {
+    position: absolute;
+    margin-top:24px;
+    margin-left:22px;
+}
+
+.buttonTwo {
+    position: absolute;
+    margin-top:90px;
+    margin-left:22px;
+}
+
+.buttonThree {
+    position: absolute;
+    margin-top:156px;
+    margin-left:22px;
+}
+
+.buttonFour {
+    position: absolute;
+    margin-top:221px;
+    margin-left:22px;
+}

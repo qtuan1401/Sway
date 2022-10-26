@@ -1,1 +1,0 @@
-Propaganda filter
