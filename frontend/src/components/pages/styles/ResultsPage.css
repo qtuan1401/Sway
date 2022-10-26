@@ -6,7 +6,7 @@
 }
 
 .resultsPage {
-    width: 50%;
+    width: 65%;
     min-width: 700px;
     height: auto;
     margin: 50px auto;
@@ -19,5 +19,6 @@
     font-size: 17px;
 }
 .resultsDisplayStack {
+    width: 100%;
     display: flex;
 }

@@ -59,37 +59,31 @@ const ResultsPage = () => {
                 Identified biases:
             </div>
             <div className="resultsDisplayStack">
-                <div className="resultOne">
-                    <BiasDisplay
-                        header={politicalCard.header}
-                        description={politicalCard.description}
-                        leftLabel={politicalCard.leftLabel}
-                        rightLabel={politicalCard.rightLabel}
-                        value={politicalCard.value}
-                        confidence={politicalCard.confidence}
-                    />
-                </div>
-                <div className="resultTwo">
-                    <BiasDisplay
-                        header={genderCard.header}
-                        description={genderCard.description}
-                        leftLabel={genderCard.leftLabel}
-                        rightLabel={genderCard.rightLabel}
-                        value={genderCard.value}
-                        confidence={genderCard.confidence}
-                        rightLabelOffset={genderCard.rightLabelOffset}
-                    />
-                </div>
-                <div className="resultThree">
-                    <BiasDisplay 
-                        header={qualityCard.header}
-                        description={qualityCard.description}
-                        leftLabel={qualityCard.leftLabel}
-                        rightLabel={qualityCard.rightLabel}
-                        value={qualityCard.value}
-                        confidence={qualityCard.confidence}
-                    />
-                </div>
+                <BiasDisplay
+                    header={politicalCard.header}
+                    description={politicalCard.description}
+                    leftLabel={politicalCard.leftLabel}
+                    rightLabel={politicalCard.rightLabel}
+                    value={politicalCard.value}
+                    confidence={politicalCard.confidence}
+                />
+                <BiasDisplay
+                    header={genderCard.header}
+                    description={genderCard.description}
+                    leftLabel={genderCard.leftLabel}
+                    rightLabel={genderCard.rightLabel}
+                    value={genderCard.value}
+                    confidence={genderCard.confidence}
+                    rightLabelOffset={genderCard.rightLabelOffset}
+                />
+                <BiasDisplay 
+                    header={qualityCard.header}
+                    description={qualityCard.description}
+                    leftLabel={qualityCard.leftLabel}
+                    rightLabel={qualityCard.rightLabel}
+                    value={qualityCard.value}
+                    confidence={qualityCard.confidence}
+                />
             </div>
             <div className="overallResultPanel">
                 <BiasOverall header={overall.header} description={overall.description} percent={overallPercent}/>

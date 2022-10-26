@@ -8,7 +8,7 @@
 .BiasOverallContainer {
     box-sizing: border-box;
 
-    width: 1220px;
+    width: 100%;
     height: auto;
 
     background: #FCFCFC;
@@ -17,7 +17,6 @@
 }
 
 .overallBoxHeader {
-    width: 100%;
     height: 28px;
     margin-top: 30px;
     text-align: center;

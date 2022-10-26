@@ -8,7 +8,7 @@
 .biasDisplay {
     box-sizing: border-box;
 
-    width: 400px;
+    flex-grow: 1;
     height: auto;
     margin: 10px;
     margin-left: 0;
