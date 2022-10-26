@@ -9,7 +9,7 @@ import json
 app = Flask(__name__)
 cors = CORS(app)
 
-@app.route("/url", methods=["POST"], strict_slashes=False)
+@app.route("/url", methods=["GET"], strict_slashes=False)
 def test():
     print(request.json["url"])
     dict = {
