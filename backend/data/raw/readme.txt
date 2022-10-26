@@ -1,1 +1,0 @@
-articles1.zip contains the raw data from Kaggle.com All the Articles dataset used to train the gender bias model
