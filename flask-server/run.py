@@ -10,7 +10,7 @@ import json
 app = Flask(__name__)
 cors = CORS(app)
 
-@app.route("/", methods=["GET"], strict_slashes=False)
+@app.route("/url", methods=["GET", "POST"])
 def test():
     print(request.json["url"])
     dict = {
@@ -31,7 +31,7 @@ def getText(soup):
         return False
 
 def ScrapeURL(url): 
-    headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9'}
+    headers = {'User-Agent':'*'}
     try:
         session = requests.Session()
         session.headers = headers
