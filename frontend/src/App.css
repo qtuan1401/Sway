@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.left {
+    height: 100vh;
+}
+
+.appContainer {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+}
+
+.right {
+    flex-grow: 1;
+}

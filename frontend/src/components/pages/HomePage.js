@@ -17,13 +17,6 @@ const HomePage = ({submitHandler, inputStateChangeHandler, parentUrlBoxStateSett
     const [urlBoxText, setUrlBoxText] = useState("")
     const [textBoxText, setTextBoxText] = useState("")
     const [inputActiveState, setInputActiveState] = useState()
-    const [politicalData, setPoliticalData] = useState()
-    const [qualityData, setQualityData] = useState()
-    const [genderData, setGenderData] = useState()
-    const [genderConfidence, setGenderConfidence] = useState(0)
-    const [politicalConfidence, setPoliticalConfidence] = useState(0)
-    const [qualityConfidence, setQualityConfidence] = useState(0)
-    const [overall, setOverall] = useState(0)
     const [progress, setProgress] = useState(0);
 
     const navigate = useNavigate();
@@ -215,13 +208,13 @@ const HomePage = ({submitHandler, inputStateChangeHandler, parentUrlBoxStateSett
                 Enter text or a URL into the boxes below.
             </div>
             <div className="urlTextBox" onClick={() => inputClick(1)}>
-                <UserInputField title={"URL"} width={1166} evtHandler={setUrlBoxText}/>
+                <UserInputField title={"URL"} width={'100%'} evtHandler={setUrlBoxText}/>
             </div>
             <div className="orLabel">
                 OR
             </div>
             <div className="textInputBox" onClick={() => inputClick(2)}>
-                <UserInputField title={"Text"} rows={20} width={1166} evtHandler={setTextBoxText}/>
+                <UserInputField title={"Text"} rows={20} width={'100%'} evtHandler={setTextBoxText}/>
             </div>
             <div className="homepageSubmitButton">
                 <SubmitButton onClick={handleSubmitButtonClickEvent}/>

@@ -28,7 +28,7 @@ const Navbar = () => {
     const pathname = location.pathname;
     // console.log(pathname);
     return (
-        <div className='fullPageContainer'>
+        <div className='navbar'>
             <div className="navbarContainer">
                 <Link className="buttonOne" to={ROUTES.HOMEPAGE}>
                     <Button active={pathname === ROUTES.HOMEPAGE} logo={logoHome} logoXOffset={10} logoYOffset={10}/>
@@ -43,9 +43,6 @@ const Navbar = () => {
                     <Button active={pathname === ROUTES.LINKS_PAGE} logo={logoShare} logoXOffset={16} logoYOffset={10}/>
                 </Link>
             </div>
-            {/* <div className="pageContainer">
-                <PageController />
-            </div> */}
         </div>
     )
 }

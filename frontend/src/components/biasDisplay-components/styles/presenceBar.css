@@ -1,5 +1,4 @@
 .presenceBarBG {
-    position: absolute;
     width: 345px;
     height: 30px;
 
@@ -26,4 +25,3 @@
         width: 100%
     }
 }
-  

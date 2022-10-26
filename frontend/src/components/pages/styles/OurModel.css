@@ -20,33 +20,31 @@
 }
 
 .ourModelHeader {
-    position: absolute;
     padding-top: 75px;
-    padding-left: 510px;
+    text-align: center;
     font-size: 60px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
 
 .ourModelPage {
-    /*padding-left: 200px;*/
-    padding-left: 16%;
+    width: 60%;
+    min-width: 700px;
+    margin: 50px auto;
 }
 
 .ourModelTextDisplayContainer {
-    position: absolute;
-    padding-top: 150px;
+    padding-top: 30px;
 }
 
 .ourModelTextDisplay {
     box-sizing: border-box;
-    position: absolute;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 10px;
     text-align: center; 
-    width: 1381px;
-    height: 750px;
+    width: 100%;
+    height: 800px;
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
     border-radius: 8px;
@@ -67,7 +65,7 @@
 
 .ourModelBodyTitle {
     text-align: center;
-    font-size: 200%;
+    font-size: 40px;
     font-family: 'ComfortaaReg';
     font-style: normal;
 }
@@ -75,8 +73,7 @@
 div.ourModelLinkDisplay {
     box-sizing: border-box;
     
-    position: absolute;
-    width: 1381px;
+    width: 100%;
     height: 217px;
 
     background: #FCFCFC;
