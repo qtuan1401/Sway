@@ -43,7 +43,7 @@ const HomePage = ({submitHandler, inputStateChangeHandler, parentUrlBoxStateSett
         .then(response => response.json())
         .then(token => {
             if(inputActiveState == 1) {
-                fetch('http://localhost:5000/url', {
+                fetch('https://scraper-server-sway.herokuapp.com/url', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
