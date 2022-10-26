@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 from flask_cors import CORS
 from bs4 import BeautifulSoup
@@ -50,4 +51,4 @@ def ScrapeURL(url):
         return 'No response'
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
