@@ -18,7 +18,8 @@
     font-style: normal;
     font-size: 17px;
 }
+
 .resultsDisplayStack {
-    width: 100%;
     display: flex;
+    
 }

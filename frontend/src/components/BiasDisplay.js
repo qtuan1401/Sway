@@ -26,7 +26,7 @@ const BiasDisplay = ({header, description, leftLabel, rightLabel, value, confide
 
     return (
         <div className="biasDisplay">
-            <p className="boxHeader">{header}</p>
+            <div className="boxHeader">{header}</div>
             <div className="descriptionBox">
                 {description}
             </div>

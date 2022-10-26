@@ -7,11 +7,10 @@
 
 .biasDisplay {
     box-sizing: border-box;
-
-    flex-grow: 1;
+    
     height: auto;
-    margin: 10px;
-    margin-left: 0;
+    margin: 10px 3px;
+    width: 100%;
     padding-bottom: 20px;
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
@@ -35,15 +34,17 @@
 .descriptionBox {
     font-family: 'ComfortaaReg';
     font-size: 15px;
-    width: 295px;
-    height: 140px;
-    margin-left: 50px;
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+    text-align: justify;
     /* border: 1px solid #ff0000; /* Margin for testing/fine-tuning - Keep commented out */
 }
 
-.discreteBarContainer {
-    padding-left: 25px;
-    width: 345px;
+.discreteBarContainer,
+.confidenceBarContainer {
+    margin: 20px auto;
+    width: 90%;
 }
 
 .discreteBarHeader {
@@ -67,11 +68,6 @@
     font-family: 'ComfortaaReg';
     font-size: 15px;
     font-weight: 500;
-}
-
-.confidenceBarContainer {
-    width: 345px;
-    padding-left: 25px;
 }
 
 .confidenceBarLeftLabel {
