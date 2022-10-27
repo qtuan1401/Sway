@@ -8,15 +8,13 @@ import './styles/discreteBar.css'
 // confidence - magnitude of movement in either direction
 
 const DiscreteBar = ({value, confidence}) => {
-    const [barPos, setBarPos] = useState(20)
-    const offsetToCenter = 0;
+    const [barPos, setBarPos] = useState(35);
 
     useEffect(() => {
         if(value === 1 || value === -1) {
-            setBarPos(20 + 80 * confidence)
+            setBarPos(100 * (1 - confidence))
         }
     }, [value, confidence])
-    console.log(value, confidence, barPos);
     if(value === 0) {
         return (
             <div className="discreteBarBG">
