@@ -6,8 +6,6 @@
 }
 
 .biasDisplay {
-    box-sizing: border-box;
-    
     height: auto;
     margin: 10px 3px;
     width: 100%;
@@ -15,6 +13,10 @@
     background: #FCFCFC;
     border: 1px solid #D2D2D2;
     border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;;
 }
 
 .boxHeader {
