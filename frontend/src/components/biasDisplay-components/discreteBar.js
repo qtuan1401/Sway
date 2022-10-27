@@ -12,7 +12,7 @@ const DiscreteBar = ({value, confidence}) => {
 
     useEffect(() => {
         if(value === 1 || value === -1) {
-            setBarPos(100 * (1 - confidence))
+            setBarPos(50 * (1 - confidence))
         }
     }, [value, confidence])
     console.log(value, confidence, barPos);
