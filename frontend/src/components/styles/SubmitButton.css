@@ -8,9 +8,9 @@
 .submitButton {
     box-sizing: border-box;
 
-    position: absolute;
     width: 111px;
     height: 42px;
+    margin-right: -10px;
 
     background: #A1C5EF;
     border: 1px solid #000000;
